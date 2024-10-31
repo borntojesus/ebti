@@ -1,0 +1,64 @@
+<header class="header">
+    <div class="header__container">
+        <a href="/" class="header__logo">
+            <img src="/img/Logo.png" alt="Vocal Brief">
+        </a>
+        <nav class="header__nav">
+            <ul class="header__nav-links">
+                <li class="header__nav-links__item">
+                    <a href="/features/" class="header__nav-links__item__link{% if page.url == '/features/' %} active{% endif %}">Features</a>
+                </li>
+                <li class="header__nav-links__item">
+                    <a href="/use-cases/" class="header__nav-links__item__link{% if page.url == '/use-cases/' %} active{% endif %}">Use Cases</a>
+                </li>
+                <li class="header__nav-links__item">
+                    <a href="/pricing/" class="header__nav-links__item__link{% if page.url == '/pricing/' %} active{% endif %}">Pricing</a>
+                </li>
+                <li class="header__nav-links__item">
+                    <a href="/about-us/" class="header__nav-links__item__link{% if page.url == '/about-us/' %} active{% endif %}">About Us</a>
+                </li>
+                <li class="header__nav-links__item">
+                    <a href="/how-it-works/" class="header__nav-links__item__link{% if page.url == '/how-it-works/' %} active{% endif %}">How it works</a>
+                </li>
+                <li class="header__nav-links__item">
+                    <a href="/contact-us/" class="header__nav-links__item__link{% if page.url == '/contact-us/' %} active{% endif %}">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__auth">
+            <a href="{{ site.login_url }}" class="header__auth-login-btn">Log in</a>
+            <a href="{{ site.signup_url }}" class="header__auth-signup-btn">Sign Up</a>
+        </div>
+        <div class="header__burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <nav class="header__mobile-nav" id="mobile-nav">
+        <ul class="header__mobile-nav-links">
+            <li class="header__mobile-nav-links__item dropdown">
+                <a href="/features/" class="header__mobile-nav-links__item__link{% if page.url == '/features/' %} active{% endif %}">Features</a>
+            </li>
+            <li class="header__mobile-nav-links__item dropdown">
+                <a href="/use-cases/" class="header__mobile-nav-links__item__link{% if page.url == '/use-cases/' %} active{% endif %}">Use Cases</a>
+            </li>
+            <li class="header__mobile-nav-links__item">
+                <a href="/pricing/" class="header__mobile-nav-links__item__link{% if page.url == '/pricing/' %} active{% endif %}">Pricing</a>
+            </li>
+            <li class="header__mobile-nav-links__item">
+                <a href="/about-us/" class="header__mobile-nav-links__item__link{% if page.url == '/about-us/' %} active{% endif %}">About Us</a>
+            </li>
+            <li class="header__mobile-nav-links__item">
+                <a href="/how-it-works/" class="header__mobile-nav-links__item__link{% if page.url == '/how-it-works/' %} active{% endif %}">How it works</a>
+            </li>
+            <li class="header__mobile-nav-links__item">
+                <a href="/contact-us/" class="header__mobile-nav-links__item__link{% if page.url == '/contact-us/' %} active{% endif %}">Contact Us</a>
+            </li>
+            <li class="header__mobile-nav-links__item auth__mobile">
+                <a href="{{ site.login_url }}" class="header__mobile-nav-links__item__link header__auth-login-btn">Log in</a>
+                <a href="{{ site.signup_url }}" class="header__mobile-nav-links__item__link header__auth-signup-btn">Sign Up</a>
+            </li>
+        </ul>
+    </nav>
+</header>

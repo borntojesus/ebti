@@ -1,0 +1,11 @@
+include:
+  [
+    "_pages",
+    "_redirects",
+    "_layouts"
+  ]
+
+sass:
+  style: compressed
+  sass_dir: _scss
+

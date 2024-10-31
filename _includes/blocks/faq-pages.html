@@ -1,0 +1,24 @@
+<div class="faq faq--pages">
+    <h2 class="faq__h2">FAQ</h2>
+    <div class="faq__container">
+        <div class="faq__info">
+            <h2 class="faq__title">Common Problem</h2>
+            <p class="faq__subtitle">Everything you need to know about the product and billing.</p>
+        </div>
+        <div class="faq__items">
+            {% for item in site.data.faq.faq %}
+            <div class="faq__item {% if forloop.first %}faq__item--active{% endif %}">
+                <div class="faq__question">
+                    <span class="faq__question-text">{{ item.question }}</span>
+                    <span class="faq__toggle">
+                        <img src="/img/faq/{% if forloop.first %}Minus.svg{% else %}Plus.svg{% endif %}">
+                    </span>
+                </div>
+                <div class="faq__answer">
+                    {{ item.answer }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
