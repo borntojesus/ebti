@@ -2,5 +2,28 @@
 ---
 @use "lib/normalize";
 @use "base";
-@use "variables";
+@import "variables";
 
+@import "block/header";
+
+
+@font-face {
+    font-family: 'Fixel Display';
+    src: url('/fonts/FixelDisplay-Regular.woff2') format('woff2'),
+         url('/fonts/FixelDisplay-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fixel Display';
+    src: url('/fonts/FixelDisplay-Bold.woff2') format('woff2'),
+         url('/fonts/FixelDisplay-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'Fixel Display', sans-serif;
+}

@@ -1,0 +1,7 @@
+---
+layout: page
+---
+
+{% for block in page.blocks %}
+  {% include blocks/{{ block.block }}.html params=block %}
+{% endfor %}
