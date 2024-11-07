@@ -46,16 +46,17 @@
         & p {
           max-width: 450px;
           padding-left: 80px ;
-          font-weight: 600px;
           font-size: 20px;
         }
       }
       &-contacts {
         padding-top: 50px;
+        & .footer__text:first-child {
+          margin-bottom: 15px;
+        }
         & p {
           max-width: 450px;
           padding-left: 80px ;
-          font-weight: 600px;
           font-size: 20px;
         }
       }
@@ -66,33 +67,91 @@
       margin-left: 80px;
       margin-top: 40px;
       margin-bottom: 60px;
+      
     }
   
     &__bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 10px;
+      padding-top: 60px;
       font-size: 0.9rem;
-    }
-  
-    &__logo {
-      width: 40px;
-      height: auto;
-      margin-right: 10px;
     }
   
     &__info {
       display: flex;
       gap: 15px;
+      color: $mainGray;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
     }
   
     &__link {
-      color: #ffffff;
+      color: $mainGray;
       text-decoration: none;
-  
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
       &:hover {
         text-decoration: underline;
+      }
+    }
+
+    &__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 60px;
+      padding-left: 32px;
+      @media(max-width: 1100px) {
+        margin-bottom: 0;
+        padding-left: 0;
+      }
+      &-titles {
+        h2 {
+          font-size: 28px;
+          font-weight: bold;
+          margin-block-start: 0;
+          margin-block-end: 0;
+          @media(max-width: 500px) {
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+        
+        p {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-bottom: 5px;
+          font-weight: 400;
+          @media(max-width: 500px) {
+            font-size: 12px;
+          }
+        }
+      }
+      &-container {
+        border-radius: 10px;
+        background: $mainWhite;
+        width: 64px;
+        height: 64px;
+        @media(max-width: 500px) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+  
+      &-image {
+        padding: 7px 11px 8px 12px;
+        max-width: 40px;
+        max-height: 49px;
+        background: white;
+        border-radius: 8px;
+        @media(max-width: 500px) {
+          padding: 5px 8px;
+          max-width: 24px;
+          max-height: 30px;
+        }
       }
     }
 }
