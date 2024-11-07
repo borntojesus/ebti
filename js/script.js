@@ -1,4 +1,7 @@
 function toggleMenu() {
-    const mobileMenu = document.getElementById("mobileMenu");
-    mobileMenu.classList.toggle("visible");
-  }
+  const burgerMenu = document.getElementById("burgerMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
+  
+  burgerMenu.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+}

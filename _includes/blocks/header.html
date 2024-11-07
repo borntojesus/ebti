@@ -11,14 +11,7 @@
         </div>
       </div>
 
-      <div class="header__burger" onclick="toggleMenu()">
-        <span class="header__burger-line"></span>
-        <span class="header__burger-line"></span>
-        <span class="header__burger-line"></span>
-      </div>
-
-      <!-- Navigation Menu -->
-      <nav class="header__nav" id="mobileMenu">
+      <nav class="header__nav">
         <ul class="header__menu">
           <li class="header__menu-item"><a href="#">Послуги</a></li>
           <li class="header__menu-item"><a href="#">Відділення</a></li>
@@ -40,6 +33,30 @@
         </div>
       </div>
     </div>
+
+    <div class="header__burger" id="burgerMenu" onclick="toggleMenu()">
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
+    </div>
+  </div>
+
+  <div class="header__mobile-menu" id="mobileMenu">
+    <ul class="header__mobile-menu-list">
+      <div class="header__mobile-navigation">
+        <li class="header__mobile-menu-item"><a href="#">Послуги</a></li>
+        <li class="header__mobile-menu-item"><a href="#">Відділення</a></li>
+        <li class="header__mobile-menu-item"><a href="#">Контакти</a></li>
+        <li class="header__mobile-menu-item"><a href="#">Про нас</a></li>
+      </div>
+      <div class="header__address-container header__address-container--mobile">
+        <img src="/img/icons/location.svg" alt="Локація">
+        <p class="header__address">07400, Київська обл., Броварський р-н, м. Бровари, вул. Шевченка, 8а</p>
+      </div>
+      <div class="header__phone-container header__phone-container--mobile">
+        <img src="/img/icons/phone.svg" alt="Номер телефону">
+        <a href="tel:+380674577502" class="header__phone">+38 067 457 75 02</a>
+      </div>
+    </ul>
   </div>
 </header>
-
