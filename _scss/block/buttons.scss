@@ -1,0 +1,8 @@
+.consultation-button {
+    border-radius: 100px;
+    background: $headerBackground;
+    padding: 15px 65px;
+    &:hover {
+        opacity: 0.8;
+    }
+}

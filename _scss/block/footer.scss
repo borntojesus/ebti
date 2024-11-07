@@ -4,6 +4,7 @@
     &__wrapper {
         max-width: 1400px;
         margin: 0 auto;
+        padding: 0 15px;
     }
     &__container {
       display: flex;
@@ -13,15 +14,11 @@
   
     &__section {
       flex: 1;
-      &--address {
+      &--info {
         border-right: 1px solid rgba(255, 255, 255, 0.2);
       }
-      &--address, &--contacts {
-        padding-left: 80px;
-        
-        &:last-child {
-          margin-right: 0;
-        }
+      &--contacts {
+        padding-top: 80px;
       }
     }
   
@@ -37,41 +34,38 @@
     &__text {
       font-size: 1rem;
       margin-bottom: 5px;
-      &-address {
+      &-info {
         padding-top: 80px;
-        max-width: 450px;
         padding-bottom: 50px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       }
+
+      &-address {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 50px;
+        & p {
+          max-width: 450px;
+          padding-left: 80px ;
+          font-weight: 600px;
+          font-size: 20px;
+        }
+      }
+      &-contacts {
+        padding-top: 50px;
+        & p {
+          max-width: 450px;
+          padding-left: 80px ;
+          font-weight: 600px;
+          font-size: 20px;
+        }
+      }
     }
-  
     &__buttons {
       display: flex;
       gap: 10px;
-    }
-  
-    &__button {
-      padding: 10px 15px;
-      border-radius: 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-  
-      &--consultation {
-        background-color: #2979ff;
-        color: #ffffff;
-        border: none;
-      }
-  
-      &--services {
-        background-color: transparent;
-        color: #ffffff;
-        border: 1px solid #ffffff;
-      }
-  
-      &:hover {
-        opacity: 0.8;
-      }
+      margin-left: 80px;
+      margin-top: 40px;
+      margin-bottom: 60px;
     }
   
     &__bottom {
