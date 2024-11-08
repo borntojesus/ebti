@@ -12,3 +12,18 @@
         opacity: 0.8;
     }
 }
+
+.our-service-button {
+    border-radius: 100px;
+    padding: 20px 65px;
+    color: $mainWhite;
+    border: 2px solid $mainWhite;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; 
+    letter-spacing: -0.16px;
+    &:hover {
+        opacity: 0.8;
+    }
+}

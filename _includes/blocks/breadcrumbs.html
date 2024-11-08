@@ -1,0 +1,32 @@
+<div class="breadcrumb section section--white section--s temp">
+    <div class="container">
+        <div class="breadcrumb__wrapper">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li class="breadcrumb__item" itemprop="itemListElement" itemscope
+                    itemtype="https://schema.org/ListItem">
+                    <a href="/" itemprop="item">
+                        <span itemprop="name"> Головна </span>
+                    </a>
+                    <span class="breadcrumb-divider"> <img src="/img/icons/breadcrumb-symbol.svg" alt=">"></span>
+                    <meta content="1" itemprop="position" />
+                </li>
+                <li class="breadcrumb__item">
+                    <a href="{{ page.breadcrumbs_parent-url }}" itemprop="item">
+                        <span itemprop="name"> {{ page.breadcrumbs_parent-name }} </span>
+                    </a>
+                    <meta content="2" itemprop="position" />
+                </li>
+                <li class="breadcrumb__item active">
+                    <span itemprop="name"> {{ page.breadcrumbs_current }} </span>
+                    <meta content="
+                                        {% if page.breadcrumbs_child-url %}
+                                            4
+                                        {% else %}
+                                            3
+                                        {% endif %}
+                                    " itemprop="position" />
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>

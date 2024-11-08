@@ -1,0 +1,30 @@
+.breadcrumb {
+    margin-bottom: 24px;
+    padding-top: 30px;
+    ol {
+        margin-block-start: 0;
+    }
+    li {
+        display: inline;
+    }
+    &__wrapper ol {
+        display: flex;
+    }
+    &__item:not(.active) span {
+        color: $mainWhite;
+    }
+    &__item{
+        &.active {
+            color: rgba(18, 18, 18, .8);
+        }
+    }
+    @media (max-width: 767px) {
+        &__wrapper ul {
+            font-size: 12px;
+            flex-wrap: wrap;
+        }
+        .breadcrumb-divider {
+            margin: 0 8px;
+        }
+    }
+}

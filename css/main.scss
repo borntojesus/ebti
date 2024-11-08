@@ -8,24 +8,65 @@
 @import "block/footer";
 @import "block/old";
 @import "block/buttons";
+@import "block/department-hero";
+@import "block/contacts";
+@import "block/breadcrumbs";
 
 @font-face {
-    font-family: 'Fixel Display';
-    src: url('/fonts/FixelDisplay-Regular.woff2') format('woff2'),
-         url('/fonts/FixelDisplay-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'FixelDisplay';
+    src: url('/fonts/FixelDisplay-Thin.otf') format('opentype');
+    font-weight: 100; 
+}
+  
+@font-face {
+    font-family: 'FixelDisplay';
+    src: url('/fonts/FixelDisplay-ExtraLight.otf') format('opentype');
+    font-weight: 200; 
 }
 
 @font-face {
-    font-family: 'Fixel Display';
-    src: url('/fonts/FixelDisplay-Bold.woff2') format('woff2'),
-         url('/fonts/FixelDisplay-Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
+    font-family: 'FixelDisplay';
+    src: url('/fonts/FixelDisplay-Light.otf') format('opentype');
+    font-weight: 300; 
 }
 
+@font-face {
+    font-family: 'FixelDisplay';
+    src: url('/fonts/FixelDisplay-Regular.otf') format('opentype');
+    font-weight: 400; 
+}
+
+@font-face {
+    font-family: 'FixelDisplay';
+    src: url('/fonts/FixelDisplay-Medium.otf') format('opentype');
+    font-weight: 500; 
+}
+
+@font-face {
+    font-family: 'FixelDisplay';
+    src: url('/fonts/FixelDisplay-SemiBold.otf') format('opentype');
+    font-weight: 600; 
+}
+
+@font-face {
+    font-family: 'FixelDisplay';
+    src: url('/fonts/FixelDisplay-Bold.otf') format('opentype');
+    font-weight: 700; 
+}
+
+@font-face {
+    font-family: 'FixelDisplay';
+    src: url('/fonts/FixelDisplay-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'FixelDisplay';
+    src: url('/fonts/FixelDisplay-Black.otf') format('opentype');
+    font-weight: 900; 
+}
 
 body {
-    font-family: 'Fixel Display', sans-serif;
+    font-family: 'FixelDisplay', sans-serif;
 }
+
