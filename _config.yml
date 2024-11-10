@@ -9,3 +9,11 @@ sass:
   style: compressed
   sass_dir: _scss
 
+plugins:
+  - jekyll-sitemap
+
+url: "https://kpkorbti.com.ua"
+
+exclude:
+  - README.md
+  - node_modules/
