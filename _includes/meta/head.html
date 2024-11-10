@@ -3,9 +3,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='/favicon.ico' rel='shortcut icon' type='image/ico'>
 
-<title>{{ page.title }}</title>
-<meta content="{{ page.description | replace: '"', "'" }}" name="description">
+<title>
+    {% if page.title %}
+        {{ page.title }}
+    {% else %}
+        БТІ {{ page.region }} {{ page.district }} район – Офіційний сайт.
+    {% endif %}
+</title>
 
+<meta content='
+    {% if page.description %}
+        {{ page.description }}
+    {% else %}
+       БТІ {{ page.region }}. Офіційний сайт для замовлення послуг технічної інвентаризації, виготовлення технічних паспортів
+    {% endif %}
+' name="description">
 
 <link rel="stylesheet" href="/css/main.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
@@ -16,3 +28,11 @@
 <script defer src="/js/script.js"></script>
 
 
+
+<title>
+    {% if page.title %}
+        {{ page.title }}
+    {% else %}
+        {{ page.district }} {{ page.region }}
+    {% endif %}
+</title>
