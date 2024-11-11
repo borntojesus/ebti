@@ -1,5 +1,6 @@
 ---
 ---
+
 @use "lib/normalize";
 @use "base";
 @import "variables";
@@ -11,62 +12,84 @@
 @import "block/department-hero";
 @import "block/contacts";
 @import "block/breadcrumbs";
+@import "block/departments";
+@import "block/service-order";
 
 @font-face {
-    font-family: 'FixelDisplay';
-    src: url('/fonts/FixelDisplay-Thin.otf') format('opentype');
-    font-weight: 100; 
-}
-  
-@font-face {
-    font-family: 'FixelDisplay';
-    src: url('/fonts/FixelDisplay-ExtraLight.otf') format('opentype');
-    font-weight: 200; 
+  font-family: "FixelDisplay";
+  src: url("/fonts/FixelDisplay-Thin.otf") format("opentype");
+  font-weight: 100;
 }
 
 @font-face {
-    font-family: 'FixelDisplay';
-    src: url('/fonts/FixelDisplay-Light.otf') format('opentype');
-    font-weight: 300; 
+  font-family: "FixelDisplay";
+  src: url("/fonts/FixelDisplay-ExtraLight.otf") format("opentype");
+  font-weight: 200;
 }
 
 @font-face {
-    font-family: 'FixelDisplay';
-    src: url('/fonts/FixelDisplay-Regular.otf') format('opentype');
-    font-weight: 400; 
+  font-family: "FixelDisplay";
+  src: url("/fonts/FixelDisplay-Light.otf") format("opentype");
+  font-weight: 300;
 }
 
 @font-face {
-    font-family: 'FixelDisplay';
-    src: url('/fonts/FixelDisplay-Medium.otf') format('opentype');
-    font-weight: 500; 
+  font-family: "FixelDisplay";
+  src: url("/fonts/FixelDisplay-Regular.otf") format("opentype");
+  font-weight: 400;
 }
 
 @font-face {
-    font-family: 'FixelDisplay';
-    src: url('/fonts/FixelDisplay-SemiBold.otf') format('opentype');
-    font-weight: 600; 
+  font-family: "FixelDisplay";
+  src: url("/fonts/FixelDisplay-Medium.otf") format("opentype");
+  font-weight: 500;
 }
 
 @font-face {
-    font-family: 'FixelDisplay';
-    src: url('/fonts/FixelDisplay-Bold.otf') format('opentype');
-    font-weight: 700; 
+  font-family: "FixelDisplay";
+  src: url("/fonts/FixelDisplay-SemiBold.otf") format("opentype");
+  font-weight: 600;
 }
 
 @font-face {
-    font-family: 'FixelDisplay';
-    src: url('/fonts/FixelDisplay-ExtraBold.otf') format('opentype');
-    font-weight: 800;
+  font-family: "FixelDisplay";
+  src: url("/fonts/FixelDisplay-Bold.otf") format("opentype");
+  font-weight: 700;
 }
 
 @font-face {
-    font-family: 'FixelDisplay';
-    src: url('/fonts/FixelDisplay-Black.otf') format('opentype');
-    font-weight: 900; 
+  font-family: "FixelDisplay";
+  src: url("/fonts/FixelDisplay-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "FixelDisplay";
+  src: url("/fonts/FixelDisplay-Black.otf") format("opentype");
+  font-weight: 900;
 }
 
 body {
-    font-family: 'FixelDisplay', sans-serif;
+  font-family: "FixelDisplay", sans-serif;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  @media (max-width: 1200px) {
+    padding: 0 15px;
+  }
+}
+
+.page-h1 {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: -0.48px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}

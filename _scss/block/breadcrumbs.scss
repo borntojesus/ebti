@@ -1,21 +1,38 @@
 .breadcrumb {
     margin-bottom: 24px;
     padding-top: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
     ol {
         margin-block-start: 0;
+        padding-inline-start: 0;
     }
     li {
-        display: inline;
+        display: flex;
+        font-size: 16px;
+        align-items: center;
+        gap: 6px;
     }
     &__wrapper ol {
         display: flex;
+        align-items: baseline;
+        gap: 3px;
     }
     &__item:not(.active) span {
-        color: $mainWhite;
+        color: #1E1E1E;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -0.16px;
     }
     &__item{
         &.active {
-            color: rgba(18, 18, 18, .8);
+            color: rgba(30, 30, 30, 0.40);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
         }
     }
     @media (max-width: 767px) {

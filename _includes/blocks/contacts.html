@@ -1,9 +1,15 @@
-<div class="contact">
+<div class="contact" style="{% if page.permalink == '/contacts/' %} margin-top: 30px; {% endif %}">
+  {% if page.permalink == '/contacts/' %}
+    <div class="container">
+      <h1 class="page-h1">Контакти</h1>
+    </div>
+  {% endif %}
+  <div class="contact__wrapper {% if page.permalink == '/contacts/' %} contact--page{% endif %}">
     <div class="contact__info">
       <div class="contact__item">
         <h3 class="contact__label">Адреса:</h3>
         <p class="contact__text">
-         {{page.address}}
+          {{ page.address }}
         </p>
       </div>
       <div class="contact__item">
@@ -16,25 +22,21 @@
       <div class="contact__item">
         <h3 class="contact__label">Телефон:</h3>
         <p class="contact__text contact__text--phone">
-          <a href="tel:{{page.phone-link}}" class="contact__phone">{{page.phone}}</a>
+          <a href="tel:{{ page.phone-link }}" class="contact__phone">{{ page.phone }}</a>
           <div class="contact__phone-container">
-             <img src="/img/icons/phone-blue.svg" alt="Phone">
-             <a href="tel:+380674402571" class="contact__phone--blue">+38 067 440 25 71</a>
+            <img src="/img/icons/phone-blue.svg" alt="Phone">
+            <a href="tel:+380674402571" class="contact__phone--blue">+38 067 440 25 71</a>
           </div>
         </p>
       </div>
     </div>
     <div class="contact__map-wrapper">
-        <div class="contact__map-gradient"></div>
-        <iframe class="map_map" 
-                src="https://www.google.com/maps/embed?{{page.map}}" 
-                width="680" 
-                height="670" 
-                style="border:0; " 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+      <div class="contact__map-gradient"></div>
+      <iframe class="map_map" src="https://www.google.com/maps/embed?{{ page.map }}" 
+        width="{% if page.permalink == '/contacts/' %} 600 {% else %} 680 {% endif %}" 
+        height="{% if page.permalink == '/contacts/' %} 500 {% else %} 670 {% endif %}"
+        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
+  </div>
 </div>
-  

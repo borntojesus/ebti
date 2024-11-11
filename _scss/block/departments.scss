@@ -1,0 +1,92 @@
+.departments {
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      @media (max-width: 768px) {
+        gap: 20px;
+      }
+    }
+  
+    &__card {
+      border: 1px solid #e0e0e0;
+      padding: 40px;
+      width: calc(50% - 20px); 
+      box-sizing: border-box;
+  
+      @media (max-width: 768px) {
+        width: 100%; 
+        padding: 20px;
+      }
+  
+      &__text {
+        color: $mainBlack;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: -0.16px;
+        border-bottom: 1px solid black;
+      }
+  
+      &__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        justify-content: space-between;
+      }
+    }
+  
+    &__title {
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 60px;
+      letter-spacing: -0.48px;
+  
+      @media (max-width: 768px) {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+  
+    &__region {
+      color: $mainBlue;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 1.54px;
+    }
+  
+    &__location {
+      color: $mainBlack;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 25px;
+      margin-bottom: 8px;
+  
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
+    }
+  
+    &__city {
+      font-weight: 600;
+    }
+  
+    &__description {
+      font-size: 16px;
+      color: $descriptionColor;
+      text-overflow: ellipsis;
+      margin-top: 15px;
+      margin-bottom: 60px;
+  
+      @media (max-width: 768px) {
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+    }
+}
+  
