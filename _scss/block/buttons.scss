@@ -27,3 +27,13 @@
         opacity: 0.8;
     }
 }
+
+.button-white {
+    padding: 20px 65px;
+    border-radius: 100px;
+    background: $mainWhite;
+    color: $mainBlack;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+}
