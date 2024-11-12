@@ -1,0 +1,60 @@
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  margin-top: 1rem !important;
+  list-style: none;
+
+  li {
+    margin: 0 0.75rem;
+    position: relative;
+
+    ::before {
+      display: none;
+    }
+
+    .custom-dot {
+      width: 80px;
+      height: 4px;
+      background-color: #d3d3d3;
+      border: none;
+      border-radius: 2px;
+      padding: 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #a3a3a3;
+      }
+      @media (max-width: 768px) {
+        width: 20px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -35px;
+      top: 0;
+      width: 80px;
+      height: 4px;
+      background-color: #d3d3d3;
+      border-radius: 2px;
+      transition: background-color 0.3s;
+      z-index: 2;
+    }
+
+    &.slick-active .custom-dot {
+      background-color: #007bff;
+    }
+
+    &.slick-active::after {
+      background-color: #007bff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .slick-dots li::after {
+    display: none;
+  }
+}

@@ -1,0 +1,142 @@
+.services {
+  padding-top: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: $mobileBreakpoint) {
+    padding: 40px 15px;
+  }
+
+  &__wrapper {
+    border: 1px solid rgba(30, 30, 30, 0.1);
+    padding: 60px;
+
+    @media (max-width: $mobileBreakpoint) {
+      padding: 30px;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  &__slider {
+    display: flex;
+    gap: 1rem;
+
+    .slick-slide {
+      margin: 10px 0.5rem;
+    }
+
+    .slick-prev,
+    .slick-next {
+      color: #007bff;
+    }
+  }
+
+  &__subtitle {
+    color: $descriptionColor;
+    margin-bottom: 60px;
+  }
+
+  &__card {
+    background: rgba(58, 96, 229, 0.04);
+    padding: 40px;
+    text-align: left;
+
+    @media (max-width: $mobileBreakpoint) {
+      padding: 20px;
+    }
+
+    &-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: $mainBlack;
+      font-weight: 400;
+      max-width: 350px;
+      margin-bottom: 20px;
+
+      & span {
+        color: $mainBlack;
+        font-weight: 600;
+      }
+    }
+
+    &-description {
+      font-size: 0.875rem;
+      color: $mainBlack;
+      margin-bottom: 50px;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    &-term {
+      font-size: 16px;
+      color: $descriptionColor;
+
+      @media (max-width: $mobileBreakpoint) {
+        display: none;
+      }
+    }
+
+    &-link {
+      color: #1e1e1e;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: -0.16px;
+      border-bottom: 1px solid #000;
+
+      @media (max-width: $mobileBreakpoint) {
+        display: none;
+      }
+    }
+
+    &-time {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    &-details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.875rem;
+
+      &--mobile {
+        display: none;
+
+        @media (max-width: $mobileBreakpoint) {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+
+          .services__card-term {
+            display: block;
+          }
+
+          .services__card-link {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  &__button-wrapper {
+    text-align: center;
+    margin-top: 70px;
+
+    @media (max-width: $mobileBreakpoint) {
+      margin-top: 40px;
+    }
+  }
+}
