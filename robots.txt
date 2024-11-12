@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Host: https://ebti.com.ua/
+Sitemap: https://ebti.com.ua/sitemap.xml
+

@@ -2,6 +2,7 @@ include:
   [
     "_pages",
     "_redirects",
+    "robots.txt",
   ]
 
 sass:
@@ -11,7 +12,7 @@ sass:
 plugins:
   - jekyll-sitemap
 
-url: "https://kpkorbti.com.ua"
+url: "https://ebti.com.ua"
 
 exclude:
   - README.md
