@@ -98,23 +98,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function toggleRegions() {
+    const regionsContainer = document.querySelector('.regions');
+    const toggleButton = document.querySelector('.regions__toggle');
+    regionsContainer.classList.toggle('regions--expanded');
+    if (regionsContainer.classList.contains('regions--expanded')) {
+      toggleButton.innerText = 'Приховати відділення';
+    } else {
+      toggleButton.innerText = 'Переглянути усі відділення';
+    }
+}
 document.querySelectorAll('.faq__question').forEach((question) => {
     question.addEventListener('click', () => {
       const answer = question.nextElementSibling;
-      const allQuestions = document.querySelectorAll('.faq__question');
-      const allAnswers = document.querySelectorAll('.faq__answer');
       const icon = question.querySelector('.faq__icon');
-  
       
-      allQuestions.forEach((q) => q.classList.remove('faq__question--active'));
-      allAnswers.forEach((a) => a.classList.remove('active'));
-  
-     
-      const isActive = answer.classList.contains('active');
-      if (!isActive) {
-        answer.classList.add('active');
-        question.classList.add('faq__question--active');
-      }
+      answer.classList.toggle('active');
+      icon.classList.toggle('active');
     });
+});
+
+document.querySelectorAll('.faq__question').forEach((question) => {
+  question.addEventListener('click', () => {
+    const answer = question.nextElementSibling;
+    const allQuestions = document.querySelectorAll('.faq__question');
+    const allAnswers = document.querySelectorAll('.faq__answer');
+    const icon = question.querySelector('.faq__icon');
+
+    
+    allQuestions.forEach((q) => q.classList.remove('faq__question--active'));
+    allAnswers.forEach((a) => a.classList.remove('active'));
+
+   
+    const isActive = answer.classList.contains('active');
+    if (!isActive) {
+      answer.classList.add('active');
+      question.classList.add('faq__question--active');
+    }
   });
-  
+});
