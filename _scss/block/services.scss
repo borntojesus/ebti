@@ -36,8 +36,24 @@
 
     .slick-prev,
     .slick-next {
-      color: #007bff;
       background-color: $mainBlue;
+      width: 50px;
+      height: 50px;
+      right: -20px;
+      border-radius: 100%;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 30px; 
+        height: 30px;
+        background-image: url('/img/icons/slider.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      @media(max-width: $mobileBreakpoint) {
+        display: none!important;
+      }
     }
   }
 

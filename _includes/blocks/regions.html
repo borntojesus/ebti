@@ -1,0 +1,29 @@
+<div class="regions">
+    <div class="container">
+        <div class="regions__info">
+            <span class="main-tag regions__tag">Відділення</span>
+            <h2 class="regions__title">Оперативне обслуговування <br> у вашому регіоні</h2>
+            <p class="regions__subtitle">Працюємо з фізичними та юридичними особами за прийнятною ціною</p>
+        </div>
+        <div class="regions__list">
+            {% assign districts = "Білоцерківський,Бучанський,Броварський,Обухівський" | split: "," %}
+            {% for district in districts %}
+            <div class="region {% if forloop.index > 2 %}region--extra{% endif %}">
+                <div class="region__row">
+                    <ul class="region__cities">
+                        <div class="region__name">{{ district }} район:</div>
+                        {% for page in site.pages %}
+                        {% if page.district == district %}
+                        <li class="region__city"><a href="{{ page.url }}" class="region__link">{{ page.region }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <button class="regions__toggle" onclick="toggleRegions()">Переглянути усі відділення</button>
+    </div>
+</div>

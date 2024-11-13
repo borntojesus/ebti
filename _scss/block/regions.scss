@@ -1,0 +1,123 @@
+.regions {
+  padding-top: 100px;
+  &__info {
+    text-align: center;
+  }
+  &__title {
+    color: $mainBlack;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+ 
+    margin-top: 25px;
+    @media(max-width: $mobileBreakpoint) {
+        font-size: 20px;
+    }
+  }
+
+  &__subtitle {
+    color: $descriptionColor;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 70px;
+    @media(max-width: $mobileBreakpoint) {
+        font-size: 14px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    @media(max-width: $mobileBreakpoint) {
+        flex-direction: column;
+    }
+  }
+
+  .region {
+    flex: 1 1 calc(50% - 16px);
+    display: flex;
+    flex-direction: column;
+
+    &--extra {
+      display: none;
+    }
+
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    &__name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2c4fc9;
+      background: rgba(44, 79, 201, 0.1);
+      padding: 10px 20px;
+      border-radius: 24px;
+      font-style: normal;
+      font-weight: 600;
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: background 0.3s ease, color 0.3s ease;
+      &:hover {
+        background: #2c4fc9;
+        color: white;
+      }
+    }
+
+    &__cities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .region__city {
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 24px;
+        padding: 10px 20px;
+        box-shadow: 0px 4px 32px 4px rgba(18, 20, 23, 0.06);
+        .region__link {
+          font-size: 16px;
+          color: rgba(30, 30, 30, 0.5);
+          text-decoration: none;
+          font-weight: 600;
+          transition: background 0.3s ease, color 0.3s ease;
+          &:hover {
+            color: #1a73e8;
+          }
+        }
+      }
+    }
+  }
+
+  &--expanded {
+    .region--extra {
+      display: flex;
+    }
+  }
+
+  &__toggle {
+    display: block;
+    margin: 24px auto;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: $mainBlack;
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 60px;
+    background: #fcfcfc;
+    border: 1px solid rgba(30, 30, 30, 0.1);
+    border-radius: 100px;
+    cursor: pointer;
+    text-align: center;
+  }
+}
