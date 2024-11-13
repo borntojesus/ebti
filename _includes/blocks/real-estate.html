@@ -1,0 +1,29 @@
+<div class="real-estate">
+    <div class="container">
+        <h2 class="real-estate__title">
+            Працюємо зі всіма <span class="real-estate__highlight">типами <br> нерухомості</span> у Києві та області
+        </h2>
+        
+        <div class="real-estate__categories">
+            {% for item in site.data.real-estate-types limit:4 %}
+                <div class="real-estate__category">
+                    <img src="{{ item.icon }}" alt="{{ item.title }}" class="real-estate__image">
+                    <p class="real-estate__text">
+                        {{ item.title }}<br><span>{{ item.description }}</span>
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="real-estate__line"></div>
+        <div class="real-estate__categories real-estate__categories--second">
+            {% for item in site.data.real-estate-types offset:4 limit:4 %}
+                <div class="real-estate__category">
+                    <img src="{{ item.icon }}" alt="{{ item.title }}" class="real-estate__image">
+                    <p class="real-estate__text">
+                        {{ item.title }}<br><span>{{ item.description }}</span>
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

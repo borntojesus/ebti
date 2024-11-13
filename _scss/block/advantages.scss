@@ -1,79 +1,172 @@
 .advantages {
-    &__wrapper {
-        display: flex;
-        align-items: flex-start;
-        padding: 40px;
-        max-width: 1200px;
-        margin: auto;
-    }
-    &__content {
-      flex: 1;
-      padding-right: 20px;
-  
-      &-badge {
-        display: inline-block;
-        background-color: #eaf1ff;
-        color: #007bff;
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 4px;
-        margin-bottom: 10px;
-      }
-  
-      &-title {
-        font-size: 2rem;
-        color: #333;
-        margin: 0 0 10px;
-      }
-  
-      &-description {
-        font-size: 1rem;
-        color: #666;
-        margin-bottom: 20px;
-      }
-  
-      &-image {
-        width: 100%;
-        border-radius: 8px;
-        object-fit: cover;
-      }
-    }
-  
-    &__list {
-      flex: 1;
-      display: flex;
+  padding-top: 100px;
+
+  &__wrapper {
+    display: flex;
+    gap: 60px;
+    @media (max-width: $mobileBreakpoint) {
       flex-direction: column;
-      gap: 20px;
+    }
+  }
+
+  &__content {
+    max-width: 100%;
+    @media (max-width: $mobileBreakpoint) {
+     
+    }
+  }
+  &__description {
+    color: $descriptionColor;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.18px;
+  }
+
+  &__badge {
+   margin-bottom: 25px;
+  }
+  &__title {
+    color: #1E1E1E;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px; 
+    margin-top: 25px;
+    margin-bottom: 15px;
+    letter-spacing: -0.48px;
+  }
+  &__image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .advantage {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    padding-bottom: 2rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 25px;
+      width: 2px;
+      height: 125%;
+      background-color: rgba(30, 30, 30, 0.1);
+      z-index: -1;
     }
 
-    &__item {
-        display: flex;
-  
-        &-title {
-          font-size: 1.2rem;
-          color: #333;
-          margin: 0 0 10px;
-        }
-  
-        &-description {
-          font-size: 1rem;
-          color: #666;
-          margin: 0 0 10px;
-        }
-      }
-  
-      &__number {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 30px;
-        height: 30px;
-        background-color: #eaf1ff;
-        color: #007bff;
-        font-weight: bold;
-        border-radius: 50%;
-        margin-bottom: 10px;
-        font-size: 1.2rem;
+    &:last-child::before {
+      display: none;
+    }
+
+    &__number {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border: 1px solid $mainBlue;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: $mainBlack;
+      font-weight: 500;
+      background-color: white;
+      flex-shrink: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        width: 2px;
+        height: 20%;
+        background-color: #ffffff;
+        transform: translateX(-50%);
+        z-index: 1;
       }
 
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 103%;
+        left: 50%;
+        width: 2px;
+        height: 20%;
+        background-color: #ffffff;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+    }
+
+    &__content {
+      flex-grow: 1;
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: $mainBlack;
+    }
+
+    &__text {
+      font-size: 16px;
+      color: rgba(30, 30, 30, 0.6);
+      line-height: 24px;
+      letter-spacing: -0.16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .advantage {
+      gap: 1rem;
+      padding-bottom: 2rem;
+
+      &::before {
+        height: calc(100% + 1rem);
+      }
+    }
+
+    &__number {
+      margin-bottom: 0.5rem;
+
+      &::before {
+        top: -10%;
+        height: 10%;
+      }
+
+      &::after {
+        bottom: -10%;
+        height: 10%;
+      }
+    }
+
+    &__content {
+      text-align: center;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__description {
+      font-size: 16px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
 }

@@ -1,32 +1,25 @@
-<section class="advantages">
+<div class="advantages">
     <div class="container advantages__wrapper">
         <div class="advantages__content">
-            <span class="advantages__badge">Наші переваги</span>
+            <span class="advantages__badge main-tag">Наші переваги</span>
             <h2 class="advantages__title">Чому саме ми?</h2>
-            <p class="advantages__description">Працюємо з фізичними та юридичними особами за прийнятною ціною. Працюємо
-                з фізичними та юридичними особам.</p>
-            <img class="advantages__image" src="path/to/your-image.png" alt="Building image">
+            <p class="advantages__description">
+                Працюємо з  фізичними та юридичними особами за прийнятною ціною. Працюємо з  фізичними та юридичними особам
+            </p>
+            <img class="advantages__image" src="/img/advantages/advantages-image.webp" alt="Building image">
         </div>
         <div class="advantages__list">
-            <div class="advantages__item">
-                <span class="advantages__number">1</span>
-                <div class="advantages__info">
-                    <h3 class="advantages__item-title">Оперативний виїзд інженера на об’єкт</h3>
-                    <p class="advantages__item-description">Оперативність виїзду інженера допомагає прискорити процес
-                        підготовки технічного паспорта або інших технічних документів, що важливо при купівлі-продажу,
-                        реконструкції.</p>
-                </div>
-            </div>
-            <div class="advantages__item">
-                <span class="advantages__number">2</span>
-                <h3 class="advantages__item-title">Повний спектр послуг</h3>
-                <div class="advantages__info">
-                    <h3 class="advantages__item-title">Оперативний виїзд інженера на об’єкт</h3>
-                    <p class="advantages__item-description">Оперативність виїзду інженера допомагає прискорити процес
-                        підготовки технічного паспорта або інших технічних документів, що важливо при купівлі-продажу,
-                        реконструкції.</p>
-                </div>
-            </div>
+            <div class="advantages__list">
+                {% for advantage in site.data.advantages %}
+                  <div class="advantage">
+                    <div class="advantage__number">{{ advantage.number }}</div>
+                    <div class="advantage__content">
+                      <h3 class="advantage__title">{{ advantage.title }}</h3>
+                      <p class="advantage__text">{{ advantage.text | newline_to_br }}</p>
+                    </div>
+                  </div>
+                {% endfor %}
+            </div> 
         </div>
     </div>
-</section>
+</div>

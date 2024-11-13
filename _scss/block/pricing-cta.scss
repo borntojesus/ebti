@@ -1,0 +1,377 @@
+.pricing-block {
+  padding: 100px 0;
+  background: url("/img/pricing-cta/pricing-bg.webp") no-repeat center center;
+  background-size: cover;
+  &__benefits {
+    display: flex;
+    gap: 25px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    @media (max-width: 976px) {
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__benefit {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    gap: 10px;
+    color: $mainWhite;
+
+    &-icon {
+      font-weight: bold;
+      color: #1d3bd3;
+      margin-right: 5px;
+    }
+
+    @media (max-width: 976px) {
+      font-size: 16px;
+      color: $mainWhite;
+      text-align: left;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+
+    @media (max-width: 976px) {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+  &__tag {
+    max-width: 150px;
+    margin-bottom: 25px;
+  }
+  &__title {
+    color: $mainWhite;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  &__background {
+    flex: 1;
+    color: #fff;
+
+    &__title {
+      font-size: 36px;
+      font-weight: bold;
+
+      @media (max-width: 976px) {
+        font-size: 24px;
+        text-align: center;
+      }
+    }
+
+    &__features {
+      margin: 20px 0;
+      list-style: none;
+      padding: 0;
+
+      &__feature {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        &__icon {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  &__form-wrapper {
+    flex: 0.7;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .pricing-block__title {
+      color: $mainBlack;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -0.18px;
+      margin-bottom: 25px;
+
+      @media (max-width: 768px) {
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__row {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__label {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    color: rgba(30, 30, 30, 0.5);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &__select,
+  &__input {
+    max-width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    border: 1px solid rgba(30, 30, 30, 0.15);
+    border-radius: 10px;
+    color: $mainBlack;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    background-color: #fff;
+    appearance: none;
+
+    &::placeholder {
+      color: $mainBlack;
+    }
+
+    &.pricing-block__input {
+      background: none;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #d6ccbe;
+      box-shadow: 0 0 4px rgba(231, 218, 198, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      padding: 14px;
+      font-size: 14px;
+    }
+  }
+
+  &__select {
+    background: url("/img/icons/chevron-down.svg") no-repeat right 16px center;
+    background-size: 22px;
+
+    option {
+      background-color: #f5f5f5;
+      color: $mainBlack;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+
+      &:hover {
+        background-color: #e6e6e6;
+      }
+
+      &:first-of-type {
+        border-radius: 0;
+      }
+
+      &:last-of-type {
+        border-radius: 0 0 10px 10px;
+      }
+    }
+  }
+
+  &__button {
+    background: #3a60e5;
+    padding: 16px;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 976px) {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+
+  &__custom-dropdown {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+  
+    &-selected {
+      padding: 16px;
+      border: 1px solid rgba(30, 30, 30, 0.15);
+      border-radius: 10px;
+      background: #fff;
+      font-size: 16px;
+      color: $mainBlack;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      &::after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: url("/img/icons/chevron-down.svg") no-repeat center;
+        background-size: contain;
+      }
+    }
+  
+    &-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      border: 1px solid rgba(30, 30, 30, 0.15);
+      border-radius: 0 0 10px 10px;
+      background: #fff;
+      z-index: 10;
+      display: none;
+      flex-direction: column;
+      max-height: 200px;
+      overflow-y: auto;
+  
+      &.active {
+        display: flex;
+      }
+  
+      &-option {
+        padding: 16px;
+        font-size: 16px;
+        font-weight: 400;
+        color: $mainBlack;
+        cursor: pointer;
+        background: #fff;
+  
+        &:hover {
+          background: #e6e6e6;
+        }
+  
+        &:first-of-type {
+          border-radius: 0;
+        }
+  
+        &:last-of-type {
+          border-radius: 0 0 10px 10px;
+        }
+      }
+    }
+  }
+
+  
+}
+
+.pricing-block__custom-dropdown {
+  position: relative;
+  max-width: 100%;
+  cursor: pointer;
+  margin-top: 15px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
+.pricing-block__dropdown {
+  &-option {
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    color: $mainBlack;
+    cursor: pointer;
+    background: #fff;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      padding: 12px;
+    }
+
+    &:hover {
+      background: #e6e6e6;
+    }
+
+    &:first-of-type {
+      border-radius: 0;
+    }
+
+    &:last-of-type {
+      border-radius: 0 0 10px 10px;
+    }
+  }
+
+  &-selected {
+    padding: 16px;
+    border: 1px solid rgba(30, 30, 30, 0.15);
+    border-radius: 10px;
+    background: #fff;
+    font-size: 16px;
+    color: $mainBlack;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      padding: 12px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 25px;
+      background: url("/img/icons/chevron-down.svg") no-repeat center;
+      background-size: contain;
+
+      @media (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid rgba(30, 30, 30, 0.15);
+    border-radius: 0 0 10px 10px;
+    background: #fff;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    max-height: 200px;
+    overflow-y: auto;
+
+    &.active {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      max-height: 150px; 
+    }
+  }
+}

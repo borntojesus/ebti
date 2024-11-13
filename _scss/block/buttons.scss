@@ -33,7 +33,20 @@
         opacity: 0.8;
     }
 }
-
+.our-service-button--black {
+    border-radius: 100px;
+    padding: 20px 65px;
+    color: $mainBlack;
+    border: 2px solid $mainBlack;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; 
+    letter-spacing: -0.16px;
+    &:hover {
+        opacity: 0.8;
+    }
+}
 .button-white {
     padding: 20px 65px;
     border-radius: 100px;
