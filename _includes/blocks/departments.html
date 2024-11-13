@@ -4,18 +4,18 @@
       <div class="departments__wrapper">
         {% for page in site.pages %}
         {% if page.category == 'department' %}
-          <div class="departments__card">
+          <a href="{{ page.url }}" class="departments__card">
             <p class="departments__region">{{ page.district }} район</p>
             <h3 class="departments__location">Відділення у <span class="departments__city">{{ page.region }}</span></h3>
             <p class="departments__description">
                 Технічна інвентаризація об'єктів житлового та нежитлового фонду є обов'язковою процедурою,
                 спрямованою на фіксацію фактичного стану нерухомого майна та його технічних характ...
             </p>
-            <a href="{{ page.url }}" class="departments__card__link">
+            <div class="departments__card__link">
               <span class="departments__card__text">Дізнатися більше</span>
               <img src="/img/icons/arrow.svg" alt="Arrow icon">
-            </a>
-          </div>
+            </div>
+          </a>
         {% endif %}
       {% endfor %}
       </div>
