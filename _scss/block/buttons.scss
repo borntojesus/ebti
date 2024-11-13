@@ -11,6 +11,12 @@
     &:hover {
         opacity: 0.8;
     }
+    @media (max-width: 768px) {
+            padding: 12px 40px; 
+            font-size: 14px; 
+            line-height: 14px; 
+            border-radius: 50px; 
+    }
 }
 
 .our-service-button {
