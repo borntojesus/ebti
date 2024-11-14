@@ -59,10 +59,10 @@
   }
 
   &__icon {
-    width: 24px; /* Consistent icon size */
+    width: 24px; 
     height: 24px;
-    border: 1px solid #ccc; /* Circle border */
-    border-radius: 50%; /* Rounded icon */
+    border: 1px solid #ccc; 
+    border-radius: 50%; 
     padding: 5px;
     display: flex;
     align-items: center;
@@ -75,24 +75,24 @@
       content: "";
       position: absolute;
       background-color: #000;
-      transition: transform 0.2s ease; /* Smooth transition */
+      transition: transform 0.2s ease; 
     }
 
     &::before {
-      width: 12px; /* Horizontal line width */
-      height: 2px; /* Line thickness */
-      transform: rotate(0deg); /* Always visible */
+      width: 12px; 
+      height: 2px; 
+      transform: rotate(0deg); 
     }
 
     &::after {
-      width: 2px; /* Vertical line thickness */
-      height: 12px; /* Vertical line height */
-      transform: rotate(0deg); /* Default to '+' */
+      width: 2px; 
+      height: 12px; 
+      transform: rotate(0deg); 
     }
 
     &.active {
       &::after {
-        transform: scaleY(0); /* Hides vertical line for '-' */
+        transform: scaleY(0); 
       }
     }
   }
@@ -126,7 +126,6 @@
     }
 
     &__icon {
-      /* Keep the icon size consistent on mobile */
       width: 24px;
       height: 24px;
       padding: 5px;
@@ -159,7 +158,6 @@
     }
 
     &__icon {
-      /* Icons remain the same size on smaller screens */
       width: 24px;
       height: 24px;
       padding: 5px;
