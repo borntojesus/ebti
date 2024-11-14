@@ -1,0 +1,24 @@
+<div class="services-list">
+    <div class="container">
+        <h2 class="services-list__title">Послуги</h2>
+        <div class="services-list__wrapper">
+            {% for page in site.pages %}
+            {% if page.category == 'department' %}
+            <a href="#" class="services-list__card">
+                <h3 class="services-list__card-title">Проведення <span>технічної інвентаризації</span> об'єктів житлового та нежитлового фонду</h3>
+                <p class="services-list__card-description">(виготовляємо офіційні документи БТІ)</p>
+                <p class="services-list__card-term">Терміни виконання:</p>
+                <div class="services-list__card-details services-list__card-details--mobile">
+                    <p class="services-list__card-term">Терміни виконання:</p>
+                    <div class="services-list__card-link">Дізнатися більше</div>
+                </div>
+                <div class="services-list__card-details">
+                    <span class="services-list__card-time"><img src="/img/icons/clock.svg" alt="clock">1-5 днів</span>
+                    <div class="services-list__card-link">Дізнатися більше</div>
+                </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
