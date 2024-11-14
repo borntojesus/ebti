@@ -1,11 +1,15 @@
 .service-order {
   margin-top: 100px !important;
   margin-bottom: 100px !important;
+  @media(max-width: $mobileBreakpoint) {
+    max-width: 100%!important;
+    padding: 0 !important;
+  }
   &__wrapper {
     background-color: $mainBlue;
     position: relative;
     overflow: hidden;
-  }
+   }
 
   &__image {
     position: absolute;

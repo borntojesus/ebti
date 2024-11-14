@@ -1,25 +1,28 @@
-<div class="advantages">
-    <div class="container advantages__wrapper">
-        <div class="advantages__content">
-            <span class="advantages__badge main-tag">Наші переваги</span>
-            <h2 class="advantages__title">Чому саме ми?</h2>
-            <p class="advantages__description">
-                Працюємо з  фізичними та юридичними особами за прийнятною ціною. Працюємо з  фізичними та юридичними особам
-            </p>
-            <img class="advantages__image" src="/img/advantages/advantages-image.webp" alt="Building image">
-        </div>
-        <div class="advantages__list">
+{% for block in page.blocks %}
+  {% case block.block %}
+  {% when 'advantages' %}
+    <div class="advantages">
+        <div class="container advantages__wrapper">
+            <div class="advantages__content">
+                <span class="advantages__badge main-tag">{{ block.content.badge }}</span>
+                <h2 class="advantages__title">{{ block.content.title }}</h2>
+                <p class="advantages__description">
+                    {{ block.content.description }}
+                </p>
+                <img class="advantages__image" src="{{ block.content.image }}" alt="Advantages image">
+            </div>
             <div class="advantages__list">
-                {% for advantage in site.data.advantages %}
-                  <div class="advantage">
+                {% for advantage in block.content.advantages %}
+                <div class="advantage">
                     <div class="advantage__number">{{ advantage.number }}</div>
                     <div class="advantage__content">
-                      <h3 class="advantage__title">{{ advantage.title }}</h3>
-                      <p class="advantage__text">{{ advantage.text | newline_to_br }}</p>
+                        <h3 class="advantage__title">{{ advantage.title | newline_to_br }}</h3>
+                        <p class="advantage__text">{{ advantage.text | newline_to_br }}</p>
                     </div>
-                  </div>
+                </div>
                 {% endfor %}
-            </div> 
+            </div>
         </div>
     </div>
-</div>
+  {% endcase %}
+{% endfor %}
