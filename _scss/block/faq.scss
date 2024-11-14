@@ -4,7 +4,11 @@
   &__info {
     text-align: center;
   }
-
+  &__text {
+    @media(max-width: $mobileBreakpoint) {
+      flex: 1.5;
+    }
+  }
   &__title {
     font-size: 40px;
     font-style: normal;
@@ -55,10 +59,10 @@
   }
 
   &__icon {
-    width: 24px;
+    width: 24px; 
     height: 24px;
-    border: 1px solid #ccc;
-    border-radius: 50%;
+    border: 1px solid #ccc; 
+    border-radius: 50%; 
     padding: 5px;
     display: flex;
     align-items: center;
@@ -71,24 +75,24 @@
       content: "";
       position: absolute;
       background-color: #000;
-      transition: transform 0.2s;
+      transition: transform 0.2s ease; 
     }
 
     &::before {
-      width: 12px;
-      height: 2px;
-      transform: rotate(0deg);
+      width: 12px; 
+      height: 2px; 
+      transform: rotate(0deg); 
     }
 
     &::after {
-      width: 2px;
-      height: 12px;
-      transform: rotate(360deg);
+      width: 2px; 
+      height: 12px; 
+      transform: rotate(0deg); 
     }
 
     &.active {
       &::after {
-        transform: scaleY(0);
+        transform: scaleY(0); 
       }
     }
   }
@@ -101,6 +105,7 @@
     display: none;
     max-width: 1100px;
     margin: 20px 0;
+
     &.active {
       display: block;
     }
@@ -121,16 +126,18 @@
     }
 
     &__icon {
-      width: 20px;
-      height: 20px;
-      padding: 4px;
+      width: 24px;
+      height: 24px;
+      padding: 5px;
 
       &::before {
-        width: 10px;
+        width: 12px;
+        height: 2px;
       }
 
       &::after {
-        height: 10px;
+        width: 2px;
+        height: 12px;
       }
     }
 
@@ -151,15 +158,18 @@
     }
 
     &__icon {
-      width: 18px;
-      height: 18px;
+      width: 24px;
+      height: 24px;
+      padding: 5px;
 
       &::before {
-        width: 8px;
+        width: 12px;
+        height: 2px;
       }
 
       &::after {
-        height: 8px;
+        width: 2px;
+        height: 12px;
       }
     }
 

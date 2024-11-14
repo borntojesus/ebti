@@ -6,12 +6,14 @@
         </div>
         {% for item in site.data.faq.faqs %}
         <div class="faq__item">
-            <button class="faq__question">
-                {{ item.question }}
-                <span class="faq__icon"></span>
-            </button>
+            <div class="faq__question">
+                <div class="faq__text">
+                    {{ item.question }}
+                </div>
+                <div class="faq__icon"></div>
+            </div>
             <div class="faq__answer">
-                <p>{{ item.answer }}</p>
+               {{ item.answer }}
             </div>
         </div>
         {% endfor %}
