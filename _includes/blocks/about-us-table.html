@@ -1,0 +1,28 @@
+<section class="about-us">
+  <div class="container">
+    <div class="about-us__info">
+      <h1 class="about-us__title">Про нас</h1>
+      <p class="about-us__subtitle"><span>Київське обласне бюро технічної інвентаризації (БТІ)</span> — це державна установа, яка надає послуги у сфері технічної інвентаризації нерухомого майна. БТІ взаємодіє з іншими державними установами, банками, нотаріусами, що важливо для належного оформлення та реєстрації прав власності. Звернення до БТІ часто є обов’язковою процедурою при купівлі-продажу, переплануванні, будівництві або реконструкції нерухомого майна.</p>
+    </div>
+    <div class="table-block">
+      <h2 class="table-block__title">
+        {{ site.data.organization.title }}
+      </h2>
+      <div class="table-block__table">
+        {% for row in site.data.organization.rows %}
+          <div class="table-block__row">
+            <div class="table-block__cell table-block__cell--label">
+              {{ row.label }}
+            </div>
+            {% if row.value %}
+              <div class="table-block__cell table-block__cell--value">
+                {{ row.value | markdownify }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+</section>

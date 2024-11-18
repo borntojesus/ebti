@@ -3,7 +3,9 @@
   max-width: 1200px;
   margin: 0 auto;
   &__wrapper {
-    margin-bottom: 60px;
+    &--hero {
+      margin-bottom: 60px;
+    }
   }
   ol {
     margin-block-start: 0;
@@ -44,8 +46,7 @@
     line-height: 1.5; 
 
     @media (max-width: $mobileBreakpoint) {
-        color: rgba(252, 252, 252, 0.4);
-        font-size: 14px;
+        font-size: 16px;
         max-width: 100px; 
     }
   }
