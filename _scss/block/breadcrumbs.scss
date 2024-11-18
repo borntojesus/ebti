@@ -1,47 +1,140 @@
 .breadcrumb {
-    margin-bottom: 24px;
-    padding-top: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    ol {
-        margin-block-start: 0;
-        padding-inline-start: 0;
+  padding-top: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  &__wrapper {
+    margin-bottom: 60px;
+  }
+  ol {
+    margin-block-start: 0;
+    padding-inline-start: 0;
+  }
+  li {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    gap: 6px;
+  }
+  &__wrapper ol {
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+  }
+
+  &-symbol {
+    @media (max-width: $mobileBreakpoint) {
+      display: none;
     }
-    li {
-        display: flex;
-        font-size: 16px;
-        align-items: center;
-        gap: 6px;
+    &--mobile {
+      display: none;
+      @media (max-width: $mobileBreakpoint) {
+        display: block;
+      }
     }
-    &__wrapper ol {
-        display: flex;
-        align-items: baseline;
-        gap: 3px;
+  }
+  &__item:not(.active) span {
+    color: rgba(30, 30, 30, 0.4);
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    max-width: 150px; 
+    display: inline-block; 
+    line-height: 1.5; 
+
+    @media (max-width: $mobileBreakpoint) {
+        color: rgba(252, 252, 252, 0.4);
+        font-size: 14px;
+        max-width: 100px; 
     }
-    &__item:not(.active) span {
-        color: #1E1E1E;
-        font-size: 16px;
+  }
+  &__item--hero:not(.active--hero) span {
+    color: #1e1e1e;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.16px;
+    line-height: normal;
+    white-space: nowrap; 
+    overflow: hidden;    
+    text-overflow: ellipsis; 
+    max-width: 150px;    
+    display: inline-block; 
+    @media (max-width: $mobileBreakpoint) {
+      color: $mainWhite;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+  &__item {
+    &.active a {
+      color: rgba(30, 30, 30, 0.4);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      @media (max-width: $mobileBreakpoint) {
+        color: rgba(252, 252, 252, 0.4);
+        font-size: 14px;
         font-style: normal;
         font-weight: 600;
-        line-height: normal;
-        letter-spacing: -0.16px;
+      }
     }
-    &__item{
-        &.active {
-            color: rgba(30, 30, 30, 0.40);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-        }
+
+    &.active--hero a {
+      color: rgba(30, 30, 30, 0.4);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      @media (max-width: $mobileBreakpoint) {
+        color: rgba(252, 252, 252, 0.4);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+      }
     }
-    @media (max-width: 767px) {
-        &__wrapper ul {
-            font-size: 12px;
-            flex-wrap: wrap;
-        }
-        .breadcrumb-divider {
-            margin: 0 8px;
-        }
+    &.active--hero span {
+      color: rgba(30, 30, 30, 0.4);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      @media (max-width: $mobileBreakpoint) {
+        color: rgba(252, 252, 252, 0.4);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+      }
     }
+  }
+  &__home a {
+    color: $mainBlack;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.16px;
+  }
+  &__home--hero a {
+    color: $mainBlack;
+    @media (max-width: $mobileBreakpoint) {
+      color: $mainWhite;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+  @media (max-width: 767px) {
+    &__wrapper ul {
+      font-size: 12px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb-divider {
+      margin: 0 8px;
+    }
+  }
 }

@@ -1,12 +1,13 @@
 <section class="services-hero">
+  {% include /blocks/breadcrumbs-hero.html %}
     <div class="services-hero__container">
       <div class="services-hero__content">
         <span class="services-hero__region">{{page.district}}</span>
         <h1 class="services-hero__title">
-          Київське обласне БТІ. БТІ Київ
+          {{ page.hero-title }}
         </h1>
         <p class="services-hero__subtitle">
-          Оформлення документів на нерухомість у Києві та Київській області
+          {{ page.hero-subtitle }}
         </p>
         <div class="services-hero__trident-container">
           <img src="/img/icons/trident.svg" alt="Тризуб" class="services-hero__trident-image"></img>
