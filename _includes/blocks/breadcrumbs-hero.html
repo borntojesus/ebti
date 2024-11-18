@@ -2,24 +2,28 @@
     <div class="container">
         <div class="breadcrumb__wrapper">
             <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li class="breadcrumb__item breadcrumb__home" itemprop="itemListElement" itemscope
-                    itemtype="https://schema.org/ListItem">
+                <li class="breadcrumb__item breadcrumb__home breadcrumb__home--hero" itemprop="itemListElement"
+                    itemscope itemtype="https://schema.org/ListItem">
                     <a href="/" itemprop="item">
-                       Головна
+                        Головна
                     </a>
-                    <img src="/img/icons/breadcrumb-symbol.svg" alt=">">
+                    <img src="/img/icons/breadcrumb-symbol.svg" alt=">" class="breadcrumb-symbol">
+                    <img src="/img/icons/breadcrumb-symbol-mobile.svg" alt=">"
+                        class="breadcrumb-symbol breadcrumb-symbol--mobile">
                     <meta content="1" itemprop="position" />
                 </li>
                 {% if page.breadcrumbs-parent-name %}
-                <li class="breadcrumb__item active">
+                <li class="breadcrumb__item active active--hero">
                     <a href="{{ page.breadcrumbs-parent-url }}" itemprop="item">
                         <span itemprop="name"> {{ page.breadcrumbs-parent-name }} </span>
                     </a>
-                    <img src="/img/icons/breadcrumb-symbol.svg" alt=">">
+                    <img src="/img/icons/breadcrumb-symbol.svg" alt=">" class="breadcrumb-symbol">
+                    <img src="/img/icons/breadcrumb-symbol-mobile.svg" alt=">"
+                        class="breadcrumb-symbol breadcrumb-symbol--mobile">
                     <meta content="2" itemprop="position" />
                 </li>
                 {% endif %}
-                <li class="breadcrumb__item">
+                <li class="breadcrumb__item active--hero">
                     <span itemprop="name"> {{ page.breadcrumbs_current }} </span>
                     <meta content="
                                         {% if page.breadcrumbs_child-url %}

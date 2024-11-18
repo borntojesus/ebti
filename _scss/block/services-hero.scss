@@ -1,11 +1,8 @@
 .services-hero {
-  padding-top: 100px;
-
   @media (max-width: 768px) {
     background-image: url("/img/hero/hero-image-mobile.webp");
     background-position: center;
     background-size: cover;
-    padding-top: 70px;
   }
 
   &__container {
@@ -53,7 +50,9 @@
     font-weight: 500;
     color: $mainBlack;
     margin-bottom: 20px;
-
+    & span {
+      font-weight: 600;
+    }
     @media (max-width: 768px) {
       font-size: 32px;
       margin-bottom: 10px;
@@ -66,7 +65,7 @@
   }
 
   &__subtitle {
-    color: $descriptionColor;
+    color: $mainBlack;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
