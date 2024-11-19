@@ -1,21 +1,27 @@
-<div class="faq">
+<div class="faq {% if page.permalink != '/' %}faq--margin{% endif %}">
     <div class="container">
         <div class="faq__info">
-            <span class="main-tag faq__tag">Поширені запитання</span>
-            <h2 class="faq__title">Відповідаємо на ваші питання</h2>
+            {% assign faq_block = page.blocks | where: "block", "faq" | first %}
+            {% if faq_block %}
+            <span class="main-tag faq__tag">{{ faq_block.content.badge }}</span>
+            <h2 class="faq__title">{{ faq_block.content.title }}</h2>
+            {% endif %}
         </div>
-        {% for item in site.data.faq.faqs %}
-        <div class="faq__item">
-            <div class="faq__question">
-                <div class="faq__text">
-                    {{ item.question }}
+        {% assign faq_items = faq_block.content.faqs %}
+        {% if faq_items and faq_items.size > 0 %}
+            {% for item in faq_items %}
+            <div class="faq__item">
+                <div class="faq__question">
+                    <div class="faq__text">
+                        {{ item.question }}
+                    </div>
+                    <div class="faq__icon" aria-label="Toggle Answer"></div>
                 </div>
-                <div class="faq__icon"></div>
+                <div class="faq__answer">
+                    <p>{{ item.answer }}</p>
+                </div>
             </div>
-            <div class="faq__answer">
-               {{ item.answer }}
-            </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
     </div>
 </div>
