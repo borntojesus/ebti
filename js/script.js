@@ -137,3 +137,35 @@ document.querySelectorAll('.faq__question').forEach((question) => {
     }
   });
 });
+
+  document.getElementById('telegramForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const botToken = '7832589193:AAHN8RseNQWUoctiWEZZPXIia5fmiStL0DY';
+    const chatId = '-1002329526352';
+
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    const service = formData.get('service');
+    const documentType = formData.get('documentType');
+
+    const message = `
+🔔 *Нова заявка на послуги*:
+    *Ім'я*: ${name}
+    *Телефон*: ${phone}
+    *Послуга*: ${service}
+    *Тип документа*: ${documentType}
+    `;
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'Markdown',
+      }),
+    });
+});
