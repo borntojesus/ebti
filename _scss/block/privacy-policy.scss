@@ -1,0 +1,125 @@
+.privacy-policy {
+  display: flex;
+  flex-direction: column; 
+
+  &__container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 8px;
+    @media (max-width: $mobileBreakpoint) {
+      flex-direction: column; 
+    }
+  }
+
+  &__sidebar {
+    flex: 0 0 270px;
+    padding-top: 90px;
+
+    @media (max-width: $mobileBreakpoint) {
+      flex: 0 0 auto;
+      padding: 20px 0 10px 0; 
+      text-align: center; 
+      order: 1; 
+    }
+  }
+
+  &__content {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid rgba(30, 30, 30, 0.1);
+    padding-top: 90px;
+    padding-left: 40px;
+    padding-bottom: 100px;
+
+    @media (max-width: $mobileBreakpoint) {
+      padding: 15px; 
+      border-left: none; 
+    }
+
+    .content__title {
+      font-size: 30px;
+      color: $mainBlack;
+      margin-bottom: 30px;
+      font-weight: 600;
+
+      @media (max-width: $mobileBreakpoint) {
+        font-size: 20px; 
+      }
+    }
+
+    .content__text {
+      font-size: 16px;
+      margin-bottom: 12px;
+      line-height: 1.6;
+      font-weight: 400;
+      color: $descriptionColor;
+
+      @media (max-width: $mobileBreakpoint) {
+        font-size: 14px;
+      }
+    }
+
+    .content__h2 {
+      font-size: 24px;
+      margin-top: 40px;
+
+      @media (max-width: $mobileBreakpoint) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.sidebar__menu {
+  .menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: $mobileBreakpoint) {
+      display: flex;
+      justify-content: center;
+      gap: 10px; 
+    }
+
+    .menu__item {
+      margin-bottom: 15px;
+
+      @media (max-width: $mobileBreakpoint) {
+        margin-bottom: 0; 
+      }
+
+      &:last-child {
+        border-top: 1px solid rgba(30, 30, 30, 0.1);
+        padding-top: 15px;
+
+        @media (max-width: $mobileBreakpoint) {
+          border-top: none; 
+          padding-top: 0;
+        }
+      }
+
+      .menu__link {
+        display: block;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-weight: 600;
+        color: $descriptionColor;
+        transition: background-color 0.3s;
+
+        &:hover,
+        &--active {
+          color: $mainBlack;
+        }
+
+        @media (max-width: $mobileBreakpoint) {
+          padding: 8px 12px; 
+          font-size: 14px; 
+        }
+      }
+    }
+  }
+}
