@@ -4,4 +4,5 @@ layout: page
 
 {% for block in page.blocks %}
   {% include blocks/{{ block.block }}.html params=block %}
+  {% include /blocks/modal.html %}
 {% endfor %}

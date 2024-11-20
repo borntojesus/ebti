@@ -199,32 +199,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("modal");
-  const openModalButton = document.getElementById("openModal");
+  const openModalButtons = document.querySelectorAll(".open-modal"); 
   const closeModalButton = document.getElementById("closeModal");
-  const modalForm = modal.querySelector(".modal__form");
-  const modalTitle = modal.querySelector(".modal__title");
-  const modalSubtitle = modal.querySelector(".modal__subtitle");
-  const modalFooter = modal.querySelector(".modal__info-footer");
+  const modalForm = modal?.querySelector(".modal__form");
+  const modalTitle = modal?.querySelector(".modal__title");
+  const modalSubtitle = modal?.querySelector(".modal__subtitle");
+  const modalFooter = modal?.querySelector(".modal__info-footer");
 
-  // Open modal
-  openModalButton.addEventListener("click", () => {
-    modal.style.display = "block";
-  });
+  if (openModalButtons.length > 0) {
+    openModalButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (modal) {
+          modal.style.display = "block";
+        }
+      });
+    });
+  }
 
-  // Close modal
-  closeModalButton.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+  if (closeModalButton) {
+    closeModalButton.addEventListener("click", () => {
+      if (modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
 
-  // Close modal by clicking outside
   window.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.style.display = "none";
     }
   });
 
-  // Phone input masking
-  const phoneInput = modal.querySelector('input[type="tel"]');
+  const phoneInput = modal?.querySelector('input[type="tel"]');
   if (phoneInput) {
     phoneInput.addEventListener("input", function () {
       let value = phoneInput.value.replace(/\D/g, "");
@@ -291,16 +297,16 @@ document.addEventListener("DOMContentLoaded", function () {
           }),
         });
 
-        modalTitle.textContent = "Дякуємо за заявку!";
-        modalSubtitle.textContent = "Наш менеджер зв’яжеться з Вами в найближчий час для особистої консультації!";
-        
-        const modalRows = modal.querySelectorAll(".modal__row");
-        modalRows.forEach(row => row.style.display = "none");
-        
-        const submitButton = modal.querySelector(".modal__button");
+        if (modalTitle) modalTitle.textContent = "Дякуємо за заявку!";
+        if (modalSubtitle) modalSubtitle.textContent = "Наш менеджер зв’яжеться з Вами в найближчий час для особистої консультації!";
+
+        const modalRows = modal?.querySelectorAll(".modal__row");
+        modalRows?.forEach((row) => (row.style.display = "none"));
+
+        const submitButton = modal?.querySelector(".modal__button");
         if (submitButton) submitButton.style.display = "none";
-        
-        modalFooter.style.display = "block";
+
+        if (modalFooter) modalFooter.style.display = "block";
 
         modalForm.reset();
       } catch (error) {
@@ -309,8 +315,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const dropdowns = modal.querySelectorAll(".modal__custom-dropdown");
-  if (dropdowns.length > 0) {
+  const dropdowns = modal?.querySelectorAll(".modal__custom-dropdown");
+  if (dropdowns?.length > 0) {
     dropdowns.forEach((dropdown) => {
       const selected = dropdown.querySelector(".modal__dropdown-selected");
       const options = dropdown.querySelector(".modal__dropdown-options");
