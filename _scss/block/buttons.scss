@@ -29,8 +29,12 @@
     font-weight: 500;
     line-height: 16px; 
     letter-spacing: -0.16px;
+    text-align: center;
     &:hover {
         opacity: 0.8;
+    }
+    @media(max-width: $mobileBreakpoint) {
+        padding: 12px 40px;
     }
 }
 .our-service-button--black {

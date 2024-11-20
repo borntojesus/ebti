@@ -35,21 +35,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const dropdowns = document.querySelectorAll(".pricing-block__custom-dropdown");
-  if (dropdowns.length > 0) {
-    dropdowns.forEach((dropdown) => {
+  const pricingDropdowns = document.querySelectorAll(".pricing-block__custom-dropdown");
+  if (pricingDropdowns.length > 0) {
+    pricingDropdowns.forEach((dropdown) => {
       const selected = dropdown.querySelector(".pricing-block__dropdown-selected");
       const options = dropdown.querySelector(".pricing-block__dropdown-options");
+      const hiddenInput = dropdown.querySelector("input[type='hidden']");
 
-      if (selected && options) {
+      if (selected && options && hiddenInput) {
         selected.addEventListener("click", () => {
           options.classList.toggle("active");
         });
 
         options.querySelectorAll(".pricing-block__dropdown-option").forEach((option) => {
           option.addEventListener("click", (e) => {
-            selected.textContent = e.target.textContent;
-            selected.dataset.value = e.target.dataset.value;
+            const textContent = e.target.textContent;
+            const value = e.target.dataset.value;
+
+            selected.innerHTML = `<div class="modal__dropdown-text">${textContent}</div>`;
+            hiddenInput.value = value;
+
             options.classList.remove("active");
           });
         });
@@ -63,7 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const phoneInput = document.querySelector('input[type="tel"]');
+
+  const phoneInput = document.getElementById('pricingPhone');
   if (phoneInput) {
     phoneInput.addEventListener("input", function () {
       let value = phoneInput.value.replace(/\D/g, "");
@@ -136,20 +142,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const telegramForm = document.getElementById("telegramForm");
-  if (telegramForm) {
-    telegramForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
+if (telegramForm) {
+  telegramForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-      const botToken = "7832589193:AAHN8RseNQWUoctiWEZZPXIia5fmiStL0DY";
-      const chatId = "-1002329526352";
+    const botToken = "7832589193:AAHN8RseNQWUoctiWEZZPXIia5fmiStL0DY";
+    const chatId = "-1002329526352";
 
-      const formData = new FormData(this);
-      const name = formData.get("name");
-      const phone = formData.get("phone");
-      const service = formData.get("service");
-      const documentType = formData.get("documentType");
+    const formData = new FormData(this);
+    const name = formData.get("name");
+    const phone = formData.get("phone");
+    const service = formData.get("service");
+    const documentType = formData.get("documentType");
 
-      const message = `
+    const message = `
 🔔 *Нова заявка на послуги*:
   *Ім'я*: ${name}
   *Телефон*: ${phone}
@@ -157,18 +163,45 @@ document.addEventListener("DOMContentLoaded", function () {
   *Тип документа*: ${documentType}
           `;
 
-      const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-      await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message,
-          parse_mode: "Markdown",
-        }),
-      });
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: "Markdown",
+      }),
     });
-  }
+
+    // Clear the form fields
+    const inputs = telegramForm.querySelectorAll("input, select, textarea");
+    inputs.forEach(input => {
+      if (input.type === "checkbox" || input.type === "radio") {
+        input.checked = false;
+      } else {
+        input.value = "";
+      }
+    });
+
+    // Hide the title, form elements and show only the success message
+    const formElements = telegramForm.querySelectorAll(".pricing-block__input, .pricing-block__custom-dropdown, .pricing-block__label, .pricing-block__button");
+    formElements.forEach(el => el.style.display = "none");
+
+    const title = document.getElementById("pricingModalTitle");
+    if (title) {
+      title.style.display = "none";  // Hide the title
+    }
+
+    const successMessage = document.querySelector(".pricing-block__success-message");
+    if (successMessage) {
+      successMessage.style.display = "block";  // Show the success message
+    }
+  });
+}
+
+
+
 
   const menuLinks = document.querySelectorAll(".menu__link");
   const contents = document.querySelectorAll(".privacy-policy__content");
@@ -199,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("modal");
-  const openModalButtons = document.querySelectorAll(".open-modal"); 
+  const openModalButtons = document.querySelectorAll(".open-modal");
   const closeModalButton = document.getElementById("closeModal");
   const modalForm = modal?.querySelector(".modal__form");
   const modalTitle = modal?.querySelector(".modal__title");
@@ -320,16 +353,21 @@ document.addEventListener("DOMContentLoaded", function () {
     dropdowns.forEach((dropdown) => {
       const selected = dropdown.querySelector(".modal__dropdown-selected");
       const options = dropdown.querySelector(".modal__dropdown-options");
+      const hiddenInput = dropdown.querySelector("input[type='hidden']");
 
-      if (selected && options) {
+      if (selected && options && hiddenInput) {
         selected.addEventListener("click", () => {
           options.classList.toggle("active");
         });
 
         options.querySelectorAll(".modal__dropdown-option").forEach((option) => {
           option.addEventListener("click", (e) => {
-            selected.textContent = e.target.textContent;
-            selected.dataset.value = e.target.dataset.value;
+            const textContent = e.target.textContent;
+            const value = e.target.dataset.value;
+
+            selected.innerHTML = `<div class="modal__dropdown-text">${textContent}</div>`;
+            hiddenInput.value = value;
+
             options.classList.remove("active");
           });
         });
