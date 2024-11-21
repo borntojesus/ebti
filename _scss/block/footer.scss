@@ -1,6 +1,9 @@
 .footer { 
   background-color: #0d1325;
   color: #ffffff;
+  &__text-link {
+    color: white;
+  }
   &__wrapper {
       max-width: 1200px;
       margin: 0 auto;
