@@ -303,7 +303,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const botToken = "7832589193:AAHN8RseNQWUoctiWEZZPXIia5fmiStL0DY";
       const chatId = "-1002329526352";
-
+      
+      const pagePermalink = document.body.dataset.pagePermalink || "/";
+      const pageTitle = document.body.dataset.pageTitle || "No title provided";
+      
       const formData = new FormData(this);
       const name = formData.get("name");
       const phone = formData.get("phone");
@@ -316,6 +319,8 @@ document.addEventListener("DOMContentLoaded", function () {
   *Телефон*: ${phone}
   *Послуга*: ${service}
   *Тип документа*: ${documentType}
+  *Сторінка*: [${pageTitle}]
+  *Посилання*: ${pagePermalink}
       `;
 
       try {
