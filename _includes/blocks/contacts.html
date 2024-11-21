@@ -1,39 +1,53 @@
 <div class="contact" style="{% if page.permalink == '/contacts/' %} margin-top: 30px; {% endif %}">
   {% if page.permalink == '/contacts/' %}
-    <div class="container">
-      <h1 class="page-h1">Контакти</h1>
-    </div>
+  <div class="container">
+    <h1 class="page-h1">Контакти</h1>
+  </div>
   {% endif %}
   <div class="contact__wrapper {% if page.permalink == '/contacts/' %} contact--page{% endif %}">
     <div class="contact__info">
       <div class="contact__item">
-        <h3 class="contact__label">Адреса:</h3>
+        {% if page.category == "department" %}
+        <h3 class="contact__city">БТІ у {{ page.region }}</h3>
+        {% endif %}
+        <h3 class="contact__label" style="margin-top: {% if page.category == " department" %}0{% else %}initial{% endif
+          %};">Адреса:</h3>
         <p class="contact__text">
           {{ page.address }}
         </p>
       </div>
       <div class="contact__item">
-        <h3 class="contact__label">Графік роботи:</h3>
+        {% if page.category == "department" %}
+        <h3 class="contact__city">БТІ у {{ page.region }}</h3>
+        {% endif %}
+        <h3 class="contact__label" style="margin-top: {% if page.category == " department" %}0{% else %}initial{% endif
+          %};">
+          Графік роботи:
+        </h3>
         <p class="contact__text">
-          ПН-СБ 8:00 - 17:00<br>
-          ВС - вихідний
+          ПН-ПТ 9:00 - 16:00<br>
+          СБ-ВС - вихідний
         </p>
       </div>
       <div class="contact__item">
-        <h3 class="contact__label">Телефон:</h3>
+        {% if page.category == "department" %}
+        <h3 class="contact__city">БТІ у {{ page.region }}</h3>
+        {% endif %}
+        <h3 class="contact__label" style="margin-top: {% if page.category == " department" %}0{% else %}initial{% endif
+          %};">Телефон:</h3>
         <p class="contact__text contact__text--phone">
           <a href="tel:+38096820222" class="contact__phone">+38 096 820 22 29</a>
-          <div class="contact__phone-container">
-            <a href="tel:{{ page.phone-link }}" class="contact__phone--blue">{{ page.phone }}</a>
-          </div>
+        <div class="contact__phone-container">
+          <a href="tel:{{ page.phone-link }}" class="contact__phone--blue">{{ page.phone }}</a>
+        </div>
         </p>
       </div>
     </div>
     <div class="contact__map-wrapper">
-      <iframe class="map_map" src="https://www.google.com/maps/embed?{{ page.map }}" 
-        width="{% if page.permalink == '/contacts/' %} 600 {% else %} 680 {% endif %}" 
-        height="{% if page.permalink == '/contacts/' %} 500 {% else %} 670 {% endif %}"
-        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      <iframe class="map_map" src="https://www.google.com/maps/embed?{{ page.map }}"
+        width="{% if page.permalink == '/contacts/' %} 600 {% else %} 680 {% endif %}"
+        height="{% if page.permalink == '/contacts/' %} 500 {% else %} 670 {% endif %}" style="border:0;"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
   </div>

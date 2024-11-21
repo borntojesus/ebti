@@ -3,6 +3,12 @@
     margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 100px;
+    &__city {
+      margin: 40px 0 15px 55px;
+      @media(max-width: 976px) {
+        margin: 20px 0 5px 20px;
+      }
+    }
     &__wrapper {
       display: flex;
       border: 1px solid rgba(30, 30, 30, 0.10);
