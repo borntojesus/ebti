@@ -33,7 +33,7 @@
     &:hover {
         opacity: 0.8;
     }
-    @media(max-width: $mobileBreakpoint) {
+    @media(max-width: 976px) {
         padding: 12px 40px;
     }
 }

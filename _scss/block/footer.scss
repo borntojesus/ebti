@@ -1,14 +1,17 @@
-.footer { 
+.footer {
   background-color: #0d1325;
   color: #ffffff;
+
   &__text-link {
     color: white;
   }
+
   &__wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
   }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -17,28 +20,34 @@
 
   &__section {
     flex: 1;
+
     &--info {
       border-right: 1px solid rgba(255, 255, 255, 0.2);
     }
+
     &--contacts {
       padding-top: 80px;
     }
   }
 
   &__title {
-      font-size: 36px;
-      margin-bottom: 120px;
-      &:first-child {
-          padding-top: 80px;
-          margin-bottom: 102px;
-      }
+    font-size: 36px;
+    margin-bottom: 120px;
+
+    &:first-child {
+      padding-top: 80px;
+      margin-bottom: 102px;
+    }
   }
+
   &__mobile-title {
     display: none;
   }
+
   &__text {
     font-size: 1rem;
     margin-bottom: 5px;
+
     &-info {
       padding-top: 80px;
       padding-bottom: 50px;
@@ -48,31 +57,54 @@
     &-address {
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       padding-bottom: 50px;
+
       & p {
         max-width: 450px;
-        padding-left: 80px ;
+        padding-left: 80px;
         font-size: 20px;
-        
+
+        @media(max-width: 976px) {
+          padding-left: 40px;
+        }
       }
     }
+
     &-contacts {
       padding-top: 50px;
+
       & .footer__text:first-child {
         margin-bottom: 15px;
       }
+
       & p {
         max-width: 450px;
-        padding-left: 80px ;
+        padding-left: 80px;
         font-size: 20px;
+
+        @media(max-width: 976px) {
+          padding-left: 40px;
+        }
       }
     }
   }
+
   &__buttons {
     display: flex;
     gap: 10px;
     margin-left: 80px;
     margin-top: 40px;
     margin-bottom: 60px;
+
+    @media(max-width: 976px) {
+      margin-left: 40px;
+    }
+
+    .footer__button {
+      flex-grow: 1;
+      flex-basis: 0; 
+      text-align: center; 
+      padding: 20px 20px; 
+    }
   }
 
   &__bottom {
@@ -98,6 +130,7 @@
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
+
     &:hover {
       text-decoration: underline;
     }
@@ -108,37 +141,43 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 60px;
+
     @media(max-width: 1100px) {
       margin-bottom: 0;
       padding-left: 0;
     }
+
     &-titles {
       h2 {
         font-size: 28px;
         font-weight: bold;
         margin-block-start: 0;
         margin-block-end: 0;
+
         @media(max-width: 500px) {
           font-size: 14px;
           font-weight: 600;
         }
       }
-      
+
       p {
         margin-block-start: 0;
         margin-block-end: 0;
         margin-bottom: 5px;
         font-weight: 400;
+
         @media(max-width: 500px) {
           font-size: 12px;
         }
       }
     }
+
     &-container {
       border-radius: 10px;
       background: $mainWhite;
       width: 64px;
       height: 64px;
+
       @media(max-width: 500px) {
         width: 40px;
         height: 40px;
@@ -151,6 +190,7 @@
       max-height: 49px;
       background: white;
       border-radius: 8px;
+
       @media(max-width: 500px) {
         padding: 5px 8px;
         max-width: 24px;
@@ -166,32 +206,39 @@
       font-size: 28px;
       font-style: normal;
       font-weight: 600;
-      line-height: 34px; 
+      line-height: 34px;
       letter-spacing: -0.28px;
       margin-bottom: 14px;
     }
+
     &__container {
       flex-direction: column;
       align-items: flex-start;
     }
+
     &__text-contacts {
       padding-top: 30px;
     }
+
     &__section {
       width: 100%;
       border-right: none;
       padding: 0;
     }
+
     &__title {
       display: none;
     }
+
     &__section--info {
       padding-top: 20px;
     }
+
     &__text-address {
       padding-top: 40px;
       padding-bottom: 25px;
     }
+
     &__title {
       font-size: 24px;
       margin-bottom: 20px;
@@ -240,6 +287,7 @@
       h2 {
         font-size: 18px;
       }
+
       p {
         font-size: 14px;
       }
