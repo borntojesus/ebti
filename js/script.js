@@ -141,14 +141,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const telegramForm = document.getElementById("telegramForm");
+const telegramForm = document.getElementById("telegramForm");
 if (telegramForm) {
   telegramForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const botToken = "7832589193:AAHN8RseNQWUoctiWEZZPXIia5fmiStL0DY";
     const chatId = "-1002329526352";
-
+    const pagePermalink = document.body.dataset.pagePermalink || "/";
+    const pageTitle = document.body.dataset.pageTitle || document.title;
     const formData = new FormData(this);
     const name = formData.get("name");
     const phone = formData.get("phone");
@@ -161,6 +162,8 @@ if (telegramForm) {
   *Телефон*: ${phone}
   *Послуга*: ${service}
   *Тип документа*: ${documentType}
+  *Сторінка*: [${pageTitle}]
+  *Посилання*: ${pagePermalink}
           `;
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
@@ -173,8 +176,6 @@ if (telegramForm) {
         parse_mode: "Markdown",
       }),
     });
-
-    // Clear the form fields
     const inputs = telegramForm.querySelectorAll("input, select, textarea");
     inputs.forEach(input => {
       if (input.type === "checkbox" || input.type === "radio") {
@@ -184,18 +185,17 @@ if (telegramForm) {
       }
     });
 
-    // Hide the title, form elements and show only the success message
     const formElements = telegramForm.querySelectorAll(".pricing-block__input, .pricing-block__custom-dropdown, .pricing-block__label, .pricing-block__button");
     formElements.forEach(el => el.style.display = "none");
 
     const title = document.getElementById("pricingModalTitle");
     if (title) {
-      title.style.display = "none";  // Hide the title
+      title.style.display = "none";  
     }
 
     const successMessage = document.querySelector(".pricing-block__success-message");
     if (successMessage) {
-      successMessage.style.display = "block";  // Show the success message
+      successMessage.style.display = "block";  
     }
   });
 }
@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const chatId = "-1002329526352";
       
       const pagePermalink = document.body.dataset.pagePermalink || "/";
-      const pageTitle = document.body.dataset.pageTitle || "No title provided";
+      const pageTitle = document.body.dataset.pageTitle || document.title;
       
       const formData = new FormData(this);
       const name = formData.get("name");
