@@ -163,7 +163,7 @@ if (telegramForm) {
   *Послуга*: ${service}
   *Тип документа*: ${documentType}
   *Сторінка*: [${pageTitle}]
-  *Посилання*: ${pagePermalink}
+  *Посилання*: https://kpkorbti.com.ua${pagePermalink}
           `;
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
   *Послуга*: ${service}
   *Тип документа*: ${documentType}
   *Сторінка*: [${pageTitle}]
-  *Посилання*: ${pagePermalink}
+  *Посилання*: https://kpkorbti.com.ua${pagePermalink}
       `;
 
       try {
