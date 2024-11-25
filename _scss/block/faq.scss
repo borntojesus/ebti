@@ -1,10 +1,15 @@
 .faq {
   padding-top: 100px;
-
+  &--margin {
+    margin-bottom: 100px;
+  }
   &__info {
     text-align: center;
   }
   &__text {
+    &--privacy {
+      max-width: 80%;
+    }
     @media(max-width: $mobileBreakpoint) {
       flex: 1.5;
     }
@@ -175,6 +180,44 @@
 
     &__answer {
       font-size: 14px;
+    }
+  }
+}
+
+.faq__icon {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: auto;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    transition: transform 0.2s ease;
+  }
+
+  &::before {
+    width: 12px;
+    height: 2px;
+    transform: rotate(0deg);
+  }
+
+  &::after {
+    width: 2px;
+    height: 12px;
+    transform: rotate(0deg);
+  }
+
+  &.active {
+    &::after {
+      transform: scaleY(0); 
     }
   }
 }

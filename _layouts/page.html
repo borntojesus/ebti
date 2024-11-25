@@ -5,7 +5,7 @@
 <head>
     {% include /meta/head.html %}
 </head>
-<body>
+<body data-page-permalink="{{ page.permalink | relative_url }}" data-page-title="{{ page.title }}">
     {% include /meta/after-body.html %}
     {% include /blocks/header.html %}
     </div>
