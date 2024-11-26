@@ -38,16 +38,15 @@
     color: rgba(30, 30, 30, 0.4);
     font-size: 16px;
     font-weight: 600;
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    max-width: 150px; 
-    display: inline-block; 
-    line-height: 1.5; 
-
     @media (max-width: $mobileBreakpoint) {
         font-size: 16px;
         max-width: 100px; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        max-width: 150px; 
+        display: inline-block; 
+        line-height: 1.5; 
     }
   }
   &__item--hero:not(.active--hero) span {
@@ -56,18 +55,18 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    letter-spacing: -0.16px;
-    line-height: normal;
-    white-space: nowrap; 
-    overflow: hidden;    
-    text-overflow: ellipsis; 
-    max-width: 150px;    
-    display: inline-block; 
     @media (max-width: $mobileBreakpoint) {
       color: $mainWhite;
       font-size: 14px;
       font-style: normal;
       font-weight: 600;
+      letter-spacing: -0.16px;
+      line-height: normal;
+      white-space: nowrap; 
+      overflow: hidden;    
+      text-overflow: ellipsis; 
+      max-width: 150px;    
+      display: inline-block; 
     }
   }
   &__item {
