@@ -1,28 +1,42 @@
 <section class="about-us">
-  <div class="container">
-    <div class="about-us__info">
-      <h1 class="about-us__title">Про нас</h1>
-      <p class="about-us__subtitle"><span>Київське обласне бюро технічної інвентаризації (БТІ)</span> — це державна установа, яка надає послуги у сфері технічної інвентаризації нерухомого майна. БТІ взаємодіє з іншими державними установами, банками, нотаріусами, що важливо для належного оформлення та реєстрації прав власності. Звернення до БТІ часто є обов’язковою процедурою при купівлі-продажу, переплануванні, будівництві або реконструкції нерухомого майна.</p>
-    </div>
-    <div class="table-block">
-      <h2 class="table-block__title">
-        {{ site.data.organization.title }}
-      </h2>
-      <div class="table-block__table">
-        {% for row in site.data.organization.rows %}
-          <div class="table-block__row">
-            <div class="table-block__cell table-block__cell--label">
-              {{ row.label }}
+    <div class="container">
+        <div class="about-us__info">
+            <h1 class="about-us__title">Про нас</h1>
+            <p class="about-us__subtitle">
+            <p><strong>Комунальне підприємство Київської обласної ради &ldquo;Київське обласне бюро технічної
+                інвентаризації&rdquo;</strong> є провідною організацією, що здійснює технічну інвентаризацію, реєстрацію
+                та облік об&rsquo;єктів нерухомого майна на території Київської області. Ми надаємо широкий спектр
+                послуг, спрямованих на забезпечення точності, достовірності та своєчасності даних щодо об&rsquo;єктів
+                нерухомості.</p>
+            <p>Ми працюємо у галузі технічної інвентаризації та з 2013 року, маючи багатий досвід у проведенні
+                інвентаризації житлових та нежитлових приміщень, а також у видачі технічних паспортів та інших
+                документів, що підтверджують правовий статус об&rsquo;єктів нерухомості. Ви можете звернутись до
+                будь-якого з 21 відділення, де Вам завжди раді допомогти.</p>
+            <p>Ми використовуємо сучасні технології та програмне забезпечення для забезпечення високої якості послуг та
+                максимального комфорту для наших клієнтів. Наші фахівці &ndash; це досвідчені професіонали, які знають
+                всі тонкощі роботи з нерухомістю та готові надати ефективну допомогу в будь-якому питанні.</p>
+            <p>Ми прагнемо бути надійним партнером для наших клієнтів, надаючи професійні послуги на високому рівні, що
+                відповідають вимогам сучасного ринку.</p>
+        </div>
+        <div class="table-block">
+            <h2 class="table-block__title">
+                {{ site.data.organization.title }}
+            </h2>
+            <div class="table-block__table">
+                {% for row in site.data.organization.rows %}
+                <div class="table-block__row">
+                    <div class="table-block__cell table-block__cell--label">
+                        {{ row.label }}
+                    </div>
+                    {% if row.value %}
+                    <div class="table-block__cell table-block__cell--value">
+                        {{ row.value | markdownify }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
             </div>
-            {% if row.value %}
-              <div class="table-block__cell table-block__cell--value">
-                {{ row.value | markdownify }}
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
-      </div>
+        </div>
     </div>
-  </div>
-  
+
 </section>
