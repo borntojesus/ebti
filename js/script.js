@@ -161,7 +161,6 @@ if (telegramForm) {
   *Ім'я*: ${name}
   *Телефон*: ${phone}
   *Послуга*: ${service}
-  *Тип документа*: ${documentType}
   *Сторінка*: [${pageTitle}]
   *Посилання*: https://kpkorbti.com.ua${pagePermalink}
           `;
@@ -318,7 +317,6 @@ document.addEventListener("DOMContentLoaded", function () {
   *Ім'я*: ${name}
   *Телефон*: ${phone}
   *Послуга*: ${service}
-  *Тип документа*: ${documentType}
   *Сторінка*: [${pageTitle}]
   *Посилання*: https://kpkorbti.com.ua${pagePermalink}
       `;

@@ -5,7 +5,7 @@
       background-image: url("/img/hero/hero-image-mobile.webp");
       background-position: center;
       background-size: cover;
-      padding-top: 70px;
+      padding-top: 20px;
     }
   
     &__container {
@@ -61,7 +61,7 @@
       }
   
       @media (max-width: 480px) {
-        font-size: 24px;
+        font-size: 16px;
       }
     }
   
@@ -76,7 +76,7 @@
       @media (max-width: 768px) {
         color: $mainWhite;
         margin-top: 14px;
-        font-size: 20px;
+        font-size: 14px;
       }
     }
   
@@ -113,6 +113,7 @@
   
       @media (max-width: 768px) {
         color: white;
+        font-size: 14px;
       }
     }
   
@@ -158,11 +159,12 @@
     &__button-container {
       display: flex;
       gap: 20px;
-  
+      margin: 0 auto;
+      flex-wrap: wrap;
       @media (max-width: 768px) {
         flex-direction: column;
         gap: 15px;
-        width: 100%;
+        width: 75%;
         .our-service-button--black {
             border-radius: 100px;
             padding: 12px 40px;
@@ -177,6 +179,9 @@
                 opacity: 0.8;
             }
         }
+      }
+      @media(max-width: 469px) {
+        width: 100%;
       }
     }
   
