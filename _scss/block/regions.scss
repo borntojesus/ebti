@@ -67,6 +67,9 @@
         background: #2c4fc9;
         color: white;
       }
+      @media(max-width: $mobileBreakpoint) {
+        font-size: 14px;
+      }
     }
 
     &__cities {
@@ -89,6 +92,9 @@
           text-decoration: none;
           font-weight: 600;
           transition: background 0.3s ease, color 0.3s ease;
+          @media(max-width: $mobileBreakpoint) {
+            font-size: 14px;
+          }
           &:hover {
             color: #1a73e8;
           }
