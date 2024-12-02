@@ -32,8 +32,20 @@
 
     .slick-slide {
       margin: 10px 0.5rem;
+      min-height: 350px!important;
+      display: flex!important;
+      flex-direction: column;
+      @media(max-width: $mobileBreakpoint) {
+        min-height: 500px!important;
+      }
     }
-
+    .slick-dots {
+      @media(max-width: 976px) {
+        flex-wrap: wrap;
+        left: 0;
+        bottom: -55px;
+      }
+    }
     .slick-prev,
     .slick-next {
       background-color: $mainBlue;
@@ -128,7 +140,9 @@
       align-items: center;
       justify-content: space-between;
       font-size: 0.875rem;
-
+      &-info {
+        margin-top: 0;
+      }
       &--mobile {
         display: none;
 

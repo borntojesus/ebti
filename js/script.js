@@ -35,29 +35,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const pricingDropdowns = document.querySelectorAll(".pricing-block__custom-dropdown");
+  const pricingDropdowns = document.querySelectorAll(
+    ".pricing-block__custom-dropdown"
+  );
+
   if (pricingDropdowns.length > 0) {
     pricingDropdowns.forEach((dropdown) => {
-      const selected = dropdown.querySelector(".pricing-block__dropdown-selected");
-      const options = dropdown.querySelector(".pricing-block__dropdown-options");
+      const selected = dropdown.querySelector(
+        ".pricing-block__dropdown-selected"
+      );
+      const options = dropdown.querySelector(
+        ".pricing-block__dropdown-options"
+      );
       const hiddenInput = dropdown.querySelector("input[type='hidden']");
+      const visibleInput = dropdown
+        .closest(".pricing-block__form")
+        .querySelector(".modal__dropdown-text");
 
-      if (selected && options && hiddenInput) {
+      if (selected && options) {
         selected.addEventListener("click", () => {
           options.classList.toggle("active");
         });
 
-        options.querySelectorAll(".pricing-block__dropdown-option").forEach((option) => {
-          option.addEventListener("click", (e) => {
-            const textContent = e.target.textContent;
-            const value = e.target.dataset.value;
+        options
+          .querySelectorAll(".modal__dropdown-option")
+          .forEach((option) => {
+            option.addEventListener("click", (e) => {
+              const textContent = e.target.textContent;
+              const value = e.target.dataset.value;
 
-            selected.innerHTML = `<div class="modal__dropdown-text">${textContent}</div>`;
-            hiddenInput.value = value;
+              selected.innerHTML = `<div class="modal__dropdown-text">${textContent}</div>`;
 
-            options.classList.remove("active");
+              if (hiddenInput) {
+                hiddenInput.value = value;
+              }
+
+              if (visibleInput) {
+                visibleInput.value = textContent;
+              }
+
+              options.classList.remove("active");
+            });
           });
-        });
 
         document.addEventListener("click", (e) => {
           if (!dropdown.contains(e.target)) {
@@ -68,8 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-
-  const phoneInput = document.getElementById('pricingPhone');
+  const phoneInput = document.getElementById("pricingPhone");
   if (phoneInput) {
     phoneInput.addEventListener("input", function () {
       let value = phoneInput.value.replace(/\D/g, "");
@@ -92,7 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     phoneInput.addEventListener("blur", function () {
       if (phoneInput.value.length < 17) {
-        phoneInput.setCustomValidity("Будь ласка, введіть номер у форматі +380 (XX) XXX-XX-XX");
+        phoneInput.setCustomValidity(
+          "Будь ласка, введіть номер у форматі +380 (XX) XXX-XX-XX"
+        );
       } else {
         phoneInput.setCustomValidity("");
       }
@@ -109,54 +129,86 @@ document.addEventListener("DOMContentLoaded", function () {
   if (regionsContainer && toggleButton) {
     toggleButton.addEventListener("click", function () {
       regionsContainer.classList.toggle("regions--expanded");
-      toggleButton.innerText = regionsContainer.classList.contains("regions--expanded")
+      toggleButton.innerText = regionsContainer.classList.contains(
+        "regions--expanded"
+      )
         ? "Приховати відділення"
         : "Переглянути усі відділення";
     });
   }
 
   const faqQuestions = document.querySelectorAll(".faq__question");
+
   if (faqQuestions.length > 0) {
     faqQuestions.forEach((question) => {
       question.addEventListener("click", () => {
         const answer = question.nextElementSibling;
-        const allQuestions = document.querySelectorAll(".faq__question");
-        const allAnswers = document.querySelectorAll(".faq__answer");
-        const allIcons = document.querySelectorAll(".faq__icon");
+        const icon = question.querySelector(".faq__icon");
 
-        allQuestions.forEach((q) => q.classList.remove("faq__question--active"));
-        allAnswers.forEach((a) => a.classList.remove("active"));
-        allIcons.forEach((icon) => icon.classList.remove("active"));
+        faqQuestions.forEach((q) => {
+          const otherAnswer = q.nextElementSibling;
+          const otherIcon = q.querySelector(".faq__icon");
+
+          if (otherAnswer !== answer) {
+            otherAnswer.classList.remove("active");
+            q.classList.remove("faq__question--active");
+            if (otherIcon) {
+              otherIcon.classList.remove("active");
+            }
+          }
+        });
 
         const isActive = answer.classList.contains("active");
-        if (!isActive) {
-          answer.classList.add("active");
-          question.classList.add("faq__question--active");
-          const icon = question.querySelector(".faq__icon");
-          if (icon) {
-            icon.classList.add("active");
-          }
+        answer.classList.toggle("active", !isActive);
+        question.classList.toggle("faq__question--active", !isActive);
+        if (icon) {
+          icon.classList.toggle("active", !isActive);
         }
       });
+
+      const icon = question.querySelector(".faq__icon");
+      if (icon) {
+        icon.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const answer = question.nextElementSibling;
+          faqQuestions.forEach((q) => {
+            const otherAnswer = q.nextElementSibling;
+            const otherIcon = q.querySelector(".faq__icon");
+
+            if (otherAnswer !== answer) {
+              otherAnswer.classList.remove("active");
+              q.classList.remove("faq__question--active");
+              if (otherIcon) {
+                otherIcon.classList.remove("active");
+              }
+            }
+          });
+
+          const isActive = answer.classList.contains("active");
+          answer.classList.toggle("active", !isActive);
+          icon.classList.toggle("active", !isActive);
+          question.classList.toggle("faq__question--active", !isActive);
+        });
+      }
     });
   }
 
-const telegramForm = document.getElementById("telegramForm");
-if (telegramForm) {
-  telegramForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
+  const telegramForm = document.getElementById("telegramForm");
+  if (telegramForm) {
+    telegramForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
 
-    const botToken = "7832589193:AAHN8RseNQWUoctiWEZZPXIia5fmiStL0DY";
-    const chatId = "-1002329526352";
-    const pagePermalink = document.body.dataset.pagePermalink || "/";
-    const pageTitle = document.body.dataset.pageTitle || document.title;
-    const formData = new FormData(this);
-    const name = formData.get("name");
-    const phone = formData.get("phone");
-    const service = formData.get("service");
-    const documentType = formData.get("documentType");
+      const botToken = "7832589193:AAHN8RseNQWUoctiWEZZPXIia5fmiStL0DY";
+      const chatId = "-1002329526352";
+      const pagePermalink = document.body.dataset.pagePermalink || "/";
+      const pageTitle = document.body.dataset.pageTitle || document.title;
+      const formData = new FormData(this);
+      const name = formData.get("name");
+      const phone = formData.get("phone");
+      const service = formData.get("service");
+      const documentType = formData.get("documentType");
 
-    const message = `
+      const message = `
 🔔 *Нова заявка на послуги*:
   *Ім'я*: ${name}
   *Телефон*: ${phone}
@@ -165,42 +217,43 @@ if (telegramForm) {
   *Посилання*: https://kpkorbti.com.ua${pagePermalink}
           `;
 
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-    await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-        parse_mode: "Markdown",
-      }),
-    });
-    const inputs = telegramForm.querySelectorAll("input, select, textarea");
-    inputs.forEach(input => {
-      if (input.type === "checkbox" || input.type === "radio") {
-        input.checked = false;
-      } else {
-        input.value = "";
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+      await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: "Markdown",
+        }),
+      });
+      const inputs = telegramForm.querySelectorAll("input, select, textarea");
+      inputs.forEach((input) => {
+        if (input.type === "checkbox" || input.type === "radio") {
+          input.checked = false;
+        } else {
+          input.value = "";
+        }
+      });
+
+      const formElements = telegramForm.querySelectorAll(
+        ".pricing-block__input, .pricing-block__custom-dropdown, .pricing-block__label, .pricing-block__button"
+      );
+      formElements.forEach((el) => (el.style.display = "none"));
+
+      const title = document.getElementById("pricingModalTitle");
+      if (title) {
+        title.style.display = "none";
+      }
+
+      const successMessage = document.querySelector(
+        ".pricing-block__success-message"
+      );
+      if (successMessage) {
+        successMessage.style.display = "block";
       }
     });
-
-    const formElements = telegramForm.querySelectorAll(".pricing-block__input, .pricing-block__custom-dropdown, .pricing-block__label, .pricing-block__button");
-    formElements.forEach(el => el.style.display = "none");
-
-    const title = document.getElementById("pricingModalTitle");
-    if (title) {
-      title.style.display = "none";  
-    }
-
-    const successMessage = document.querySelector(".pricing-block__success-message");
-    if (successMessage) {
-      successMessage.style.display = "block";  
-    }
-  });
-}
-
-
-
+  }
 
   const menuLinks = document.querySelectorAll(".menu__link");
   const contents = document.querySelectorAll(".privacy-policy__content");
@@ -210,7 +263,9 @@ if (telegramForm) {
       link.addEventListener("click", (e) => {
         e.preventDefault();
 
-        menuLinks.forEach((menuLink) => menuLink.classList.remove("menu__link--active"));
+        menuLinks.forEach((menuLink) =>
+          menuLink.classList.remove("menu__link--active")
+        );
 
         e.target.classList.add("menu__link--active");
 
@@ -285,7 +340,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     phoneInput.addEventListener("blur", function () {
       if (phoneInput.value.length < 17) {
-        phoneInput.setCustomValidity("Будь ласка, введіть номер у форматі +380 (XX) XXX-XX-XX");
+        phoneInput.setCustomValidity(
+          "Будь ласка, введіть номер у форматі +380 (XX) XXX-XX-XX"
+        );
       } else {
         phoneInput.setCustomValidity("");
       }
@@ -302,10 +359,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const botToken = "7832589193:AAHN8RseNQWUoctiWEZZPXIia5fmiStL0DY";
       const chatId = "-1002329526352";
-      
+
       const pagePermalink = document.body.dataset.pagePermalink || "/";
       const pageTitle = document.body.dataset.pageTitle || document.title;
-      
+
       const formData = new FormData(this);
       const name = formData.get("name");
       const phone = formData.get("phone");
@@ -334,7 +391,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (modalTitle) modalTitle.textContent = "Дякуємо за заявку!";
-        if (modalSubtitle) modalSubtitle.textContent = "Наш менеджер зв’яжеться з Вами в найближчий час для особистої консультації!";
+        if (modalSubtitle)
+          modalSubtitle.textContent =
+            "Наш менеджер зв’яжеться з Вами в найближчий час для особистої консультації!";
 
         const modalRows = modal?.querySelectorAll(".modal__row");
         modalRows?.forEach((row) => (row.style.display = "none"));
@@ -363,17 +422,19 @@ document.addEventListener("DOMContentLoaded", function () {
           options.classList.toggle("active");
         });
 
-        options.querySelectorAll(".modal__dropdown-option").forEach((option) => {
-          option.addEventListener("click", (e) => {
-            const textContent = e.target.textContent;
-            const value = e.target.dataset.value;
+        options
+          .querySelectorAll(".modal__dropdown-option")
+          .forEach((option) => {
+            option.addEventListener("click", (e) => {
+              const textContent = e.target.textContent;
+              const value = e.target.dataset.value;
 
-            selected.innerHTML = `<div class="modal__dropdown-text">${textContent}</div>`;
-            hiddenInput.value = value;
+              selected.innerHTML = `<div class="modal__dropdown-text">${textContent}</div>`;
+              hiddenInput.value = value;
 
-            options.classList.remove("active");
+              options.classList.remove("active");
+            });
           });
-        });
 
         document.addEventListener("click", (e) => {
           if (!dropdown.contains(e.target)) {

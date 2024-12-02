@@ -130,7 +130,9 @@
           align-items: center;
           justify-content: space-between;
           font-size: 0.875rem;
-    
+          &-info {
+            margin-top: auto;
+          }
           &--mobile {
             display: none;
     
