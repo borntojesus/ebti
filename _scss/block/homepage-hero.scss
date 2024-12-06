@@ -11,8 +11,10 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      > * {
-        max-width: 175px;
+      @media(max-width: 769px) {
+        > * {
+          max-width: 175px;
+        }
       }
     }
     &__container {
