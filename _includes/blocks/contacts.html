@@ -25,10 +25,17 @@
           Графік роботи:
         </h3>
         {% endif %}
+        {% if page.specific-time %}
+        <p class="contact__text">
+          ПН-ПТ {{ page.specific-time }}<br>
+          СБ-ВС - вихідний
+        </p>
+        {% else %}
         <p class="contact__text">
           ПН-ПТ 9:00 - 16:00<br>
           СБ-ВС - вихідний
         </p>
+        {% endif %}
       </div>
       <div class="contact__item">
         {% if page.category == "department" %}

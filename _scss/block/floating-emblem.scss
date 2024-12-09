@@ -18,6 +18,13 @@
   align-items: center;
   cursor: pointer;
   text-decoration: none;
+  animation: pulse 2s infinite; 
+  @media(max-width: $mobileBreakpoint) {
+    width: 55px;
+    height: 55px;
+    justify-content: unset;
+    align-items: unset;
+  }
 }
 
 .floating-call__icon {
@@ -32,18 +39,52 @@
 
 @media screen and (min-width: 769px) {
   .floating-call {
-      display: none;
+    display: none;
   }
 }
 
 @media screen and (max-width: 768px) {
   .floating-call {
-      display: flex;
+    display: flex;
+    animation: pulse-mobile 1.5s infinite; 
   }
   .floating-emblem__icon {
-      display: none;
+    display: none;
   }
   .mobile-svg {
-      display: block;
+    display: block;
+  }
+  .floating-emblem {
+    display: none;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(44, 79, 201, 0.6);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(44, 79, 201, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(44, 79, 201, 0.6);
+  }
+}
+
+@keyframes pulse-mobile {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(44, 79, 201, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(44, 79, 201, 0.7);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(44, 79, 201, 0.5);
   }
 }

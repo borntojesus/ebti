@@ -2,8 +2,28 @@
     <div class="container">
         <h1 class="services-list__title">Послуги</h1>
         <div class="services-list__wrapper">
+            <!-- First Loop: Prioritize pages with specific slug -->
+            {% assign specific_slugs = "pasportu" %}
             {% for page in site.pages %}
-            {% if page.category == 'services' %}
+            {% if page.category == 'services' and page.slug == "pasportu" %}
+            <a href="{{ page.permalink }}" class="services-list__card">
+                <h3 class="services-list__card-title">{{ page.hero-title }} {{ page.hero-subtitle }}</h3>
+                <p class="services-list__card-description">(виготовляємо офіційні документи БТІ)</p>
+                <p class="services-list__card-term">Терміни виконання:</p>
+                <div class="services-list__card-details services-list__card-details--mobile">
+                    <p class="services-list__card-term">Терміни виконання:</p>
+                    <div class="services-list__card-link">Дізнатися більше</div>
+                </div>
+                <div class="services-list__card-details">
+                    <span class="services-list__card-time"><img src="/img/icons/clock.svg" alt="clock">{{ page.deadline }}</span>
+                    <div class="services-list__card-link">Дізнатися більше</div>
+                </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+
+            {% for page in site.pages %}
+            {% if page.category == 'services' and page.slug != "pasportu" %}
             <a href="{{ page.permalink }}" class="services-list__card">
                 <h3 class="services-list__card-title">{{ page.hero-title }} {{ page.hero-subtitle }}</h3>
                 <p class="services-list__card-description">(виготовляємо офіційні документи БТІ)</p>
