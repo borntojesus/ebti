@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
 🔔 *Нова заявка на послуги*:
   *Ім'я*: ${name}
   *Телефон*: ${phone}
-  *Послуга*: ${service}
+  *Відділення*: ${service}
   *Сторінка*: [${pageTitle}]
   *Посилання*: https://kpkorbti.com.ua${pagePermalink}
           `;
@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", function () {
 🔔 *Нова заявка на послуги*:
   *Ім'я*: ${name}
   *Телефон*: ${phone}
-  *Послуга*: ${service}
+  *Відділення*: ${service}
   *Сторінка*: [${pageTitle}]
   *Посилання*: https://kpkorbti.com.ua${pagePermalink}
       `;

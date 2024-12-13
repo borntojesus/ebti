@@ -1,67 +1,82 @@
 <section class="modal" id="modal">
-    <div class="modal__form-wrapper">
-      <button class="modal__close-button" id="closeModal" aria-label="Close modal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      <h2 class="modal__title">
-        Дізнайтеся точну вартість <br> наших послуг
-      </h2>
-      <div class="modal__subtitle">
-        Залишіть нам свої контактні дані і наш менеджер зв’яжеться з Вами для особистої консультації. Заявки обробляються в будні дні (пн-пт) з 09:00 до 17:00
-      </div>
-      <form class="modal__form">
-        <div class="modal__row">
-          <label class="modal__label">
-            Ім'я*
-            <input type="text" class="modal__input" name="name" placeholder="Введіть дані" required>
-          </label>
-          <label class="modal__label">
-            Номер телефону*
-            <input type="tel" class="modal__input" name="phone" placeholder="+380" required>
-          </label>
-        </div>
-        <div class="modal__row">
-          <label class="modal__label">
-            Послуга
-            <div class="modal__custom-dropdown">
-              <div class="modal__dropdown-selected">
-                <div class="modal__dropdown-text">Виготовлення технічних паспортів</div>
-              </div>
-              <ul class="modal__dropdown-options">
-                <li class="modal__dropdown-option" data-value="Консультація з оформлення документів">Консультація з оформлення документів</li>
-                <li class="modal__dropdown-option" data-value="Виготовлення технічних паспортів">Виготовлення технічних паспортів</li>
-                <li class="modal__dropdown-option" data-value="Незалежна оцінка нерухомого майна">Незалежна оцінка нерухомого майна</li>
-                <li class="modal__dropdown-option" data-value="Консультація про експлуатацію">Консультація про експлуатацію</li>
-                <li class="modal__dropdown-option" data-value="Довідка про право власності">Довідка про право власності</li>
-                <li class="modal__dropdown-option" data-value="Технічна інвентаризація">Технічна інвентаризація</li>
-                <li class="modal__dropdown-option" data-value="Технічна документація">Технічна документація</li>
-                <li class="modal__dropdown-option" data-value="Інший документ">Інший документ</li>
-              </ul>
-              <input type="hidden" name="service" value="Виготовлення технічних паспортів">
-            </div>
-          </label>
-        </div>
-        <button class="modal__button consultation-button" type="submit">Дізнатися точну вартість</button>
-        <div class="modal__info-footer">
-          <div class="modal__info-footer__title">Номер для швидкої консультації:</div>
-          <div class="modal__info-footer__number">
-            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_163_27)">
-                <path d="M13.7763 11.5932C12.8237 10.7784 11.8569 10.2848 10.916 11.0984L10.3541 11.5901C9.94304 11.947 9.17874 13.6147 6.22366 10.2153C3.2692 6.82023 5.02735 6.29161 5.43904 5.93777L6.00397 5.44546C6.93997 4.63007 6.58674 3.60361 5.91166 2.547L5.50427 1.907C4.82612 0.852842 4.08766 0.160534 3.1492 0.974688L2.64212 1.41777C2.22735 1.71992 1.06797 2.70207 0.786735 4.56792C0.448274 6.80669 1.51597 9.37038 3.96212 12.1833C6.4052 14.9975 8.7972 16.411 11.063 16.3864C12.9461 16.3661 14.0834 15.3556 14.439 14.9882L14.948 14.5445C15.884 13.731 15.3024 12.9027 14.3492 12.0861L13.7763 11.5932Z" fill="#2C4FC9"/>
-              </g>
-              <defs>
-                <clipPath id="clip0_163_27">
-                  <rect width="16" height="16" fill="white" transform="translate(0 0.5)"/>
-                </clipPath>
-              </defs>
-            </svg> 
-            <a href="tel:+380968202229">+38 096 820 22 29</a>
-          </div>
-        </div>
-      </form>
+  <div class="modal__form-wrapper">
+    <button class="modal__close-button" id="closeModal" aria-label="Close modal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="icon">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <h2 class="modal__title">
+      Дізнайтеся точну вартість <br> наших послуг
+    </h2>
+    <div class="modal__subtitle">
+      Залишіть нам свої контактні дані і наш менеджер зв’яжеться з Вами для особистої консультації. Заявки обробляються
+      в будні дні (пн-пт) з 09:00 до 17:00
     </div>
-  </section>
-  
+    <form class="modal__form">
+      <div class="modal__row">
+        <label class="modal__label">
+          Ім'я*
+          <input type="text" class="modal__input" name="name" placeholder="Введіть дані" required>
+        </label>
+        <label class="modal__label">
+          Номер телефону*
+          <input type="tel" class="modal__input" name="phone" placeholder="+380" required>
+        </label>
+      </div>
+      <div class="modal__row">
+        <label class="modal__label">
+          Виберіть відділення
+          <div class="modal__custom-dropdown">
+            <div class="modal__dropdown-selected">
+              <div class="modal__dropdown-text">Бровари</div>
+            </div>
+            <ul class="modal__dropdown-options">
+              <li class="modal__dropdown-option" data-value="Бровари">Бровари</li>
+              <li class="modal__dropdown-option" data-value="Баришівка">Баришівка</li>
+              <li class="modal__dropdown-option" data-value="Біла Церква">Біла Церква</li>
+              <li class="modal__dropdown-option" data-value="Богуслав">Богуслав</li>
+              <li class="modal__dropdown-option" data-value="Бородянка">Бородянка</li>
+              <li class="modal__dropdown-option" data-value="Ірпінь">Ірпінь</li>
+              <li class="modal__dropdown-option" data-value="Кагарлик">Кагарлик</li>
+              <li class="modal__dropdown-option" data-value="Макарів">Макарів</li>
+              <li class="modal__dropdown-option" data-value="Миронівка">Миронівка</li>
+              <li class="modal__dropdown-option" data-value="Обухів">Обухів</li>
+              <li class="modal__dropdown-option" data-value="Переяслав-Хмельницький">Переяслав-Хмельницький</li>
+              <li class="modal__dropdown-option" data-value="Рокитне">Рокитне</li>
+              <li class="modal__dropdown-option" data-value="Сквира">Сквира</li>
+              <li class="modal__dropdown-option" data-value="Ставище">Ставище</li>
+              <li class="modal__dropdown-option" data-value="Тараща">Тараща</li>
+              <li class="modal__dropdown-option" data-value="Узин">Узин</li>
+              <li class="modal__dropdown-option" data-value="Васильків">Васильків</li>
+              <li class="modal__dropdown-option" data-value="Володарка">Володарка</li>
+              <li class="modal__dropdown-option" data-value="Яготин">Яготин</li>
+              <li class="modal__dropdown-option" data-value="Згурівка">Згурівка</li>
+            </ul>
+            <input type="hidden" name="service" value="Бровари">
+          </div>
+        </label>
+      </div>
+      <button class="modal__button consultation-button" type="submit">Дізнатися точну вартість</button>
+      <div class="modal__info-footer">
+        <div class="modal__info-footer__title">Номер для швидкої консультації:</div>
+        <div class="modal__info-footer__number">
+          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_163_27)">
+              <path
+                d="M13.7763 11.5932C12.8237 10.7784 11.8569 10.2848 10.916 11.0984L10.3541 11.5901C9.94304 11.947 9.17874 13.6147 6.22366 10.2153C3.2692 6.82023 5.02735 6.29161 5.43904 5.93777L6.00397 5.44546C6.93997 4.63007 6.58674 3.60361 5.91166 2.547L5.50427 1.907C4.82612 0.852842 4.08766 0.160534 3.1492 0.974688L2.64212 1.41777C2.22735 1.71992 1.06797 2.70207 0.786735 4.56792C0.448274 6.80669 1.51597 9.37038 3.96212 12.1833C6.4052 14.9975 8.7972 16.411 11.063 16.3864C12.9461 16.3661 14.0834 15.3556 14.439 14.9882L14.948 14.5445C15.884 13.731 15.3024 12.9027 14.3492 12.0861L13.7763 11.5932Z"
+                fill="#2C4FC9" />
+            </g>
+            <defs>
+              <clipPath id="clip0_163_27">
+                <rect width="16" height="16" fill="white" transform="translate(0 0.5)" />
+              </clipPath>
+            </defs>
+          </svg>
+          <a href="tel:+380968202229">+38 096 820 22 29</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
