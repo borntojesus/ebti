@@ -38,9 +38,11 @@
     ul {
       margin-bottom: 20px;
       color: rgba(30, 30, 30, 0.60);
-  
+      & li {
+        margin-bottom: 10px;
+      }
       strong {
-        color: black;
+        color: rgba(30, 30, 30, 0.781);
       }
     }
   
