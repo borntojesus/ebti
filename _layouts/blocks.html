@@ -4,7 +4,7 @@ layout: page
 
 {% for block in page.blocks %}
   {% include blocks/{{ block.block }}.html params=block %}
-  
+  {% include /blocks/modal.html %}
   {% if page.insert_after == block.block %}
   <div class="custom-md-content">
     <div class="content-wrapper">
