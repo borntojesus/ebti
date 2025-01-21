@@ -6,7 +6,7 @@ layout: page
   {% include blocks/{{ block.block }}.html params=block %}
   {% include /blocks/modal.html %}
   {% if page.insert_after == block.block %}
-  <div class="custom-md-content">
+  <div class="custom-md-content" {% if page.permalink == "/" %}style="padding-top: 0; max-width: 1200px"{% endif %}>
     <div class="content-wrapper">
       {{ content | markdownify }}
     </div>
@@ -14,4 +14,3 @@ layout: page
   </div>
   {% endif %}
 {% endfor %}
-
